@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { useEffect, useState } from "react";
 
-const LINKS: { href: string; label: string }[] = [
+const LINKS: { href: Route; label: string }[] = [
   { href: "/", label: "Home" },
   { href: "/posts", label: "Essays" },
   { href: "/topics", label: "Topics" },
   { href: "/collaborate", label: "Collaborate" },
-  { href: "/#about", label: "About" },
+  { href: "/#about" as Route, label: "About" },
 ];
 
 export function MobileMenu() {
