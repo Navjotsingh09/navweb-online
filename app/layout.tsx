@@ -44,7 +44,8 @@ export default function RootLayout({
             Nav Web Online
           </a>
           <nav>
-            <a href="/">Home</a>
+            <a href="/posts" style={{ marginRight: "1.25rem" }}>Posts</a>
+            <a href="/#about">About</a>
           </nav>
         </header>
         <Analytics />

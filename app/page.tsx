@@ -3,31 +3,49 @@ import { listPosts } from "@/lib/posts";
 
 const FEATURES = [
   {
-    icon: "🔬",
+    icon: "○",
     title: "Research-first",
-    body: "Every post sources at least 5 peer-reviewed papers, university press, or primary science publications. No SEO filler.",
+    body: "Every post sources at least 5 peer-reviewed papers, university press releases, or primary science publications. No SEO filler.",
   },
   {
-    icon: "🌿",
+    icon: "→",
     title: "Nature → Engineering",
     body: "We trace the full arc: organism → biological mechanism → prototype → real product. Always specific, always cited.",
   },
   {
-    icon: "🤖",
-    title: "Autonomous agent",
+    icon: "◈",
+    title: "AI-drafted content",
     body: "Posts are drafted by the Biomimicry Blogger, a VS Code agent that researches, writes, and quality-checks every piece.",
   },
   {
-    icon: "💬",
+    icon: "◻",
     title: "Moderated comments",
-    body: "Reader comments go through an automated moderation cycle every 2 hours so conversations stay substantive.",
+    body: "Reader comments go through an automated moderation pass every 2 hours — conversations stay substantive and spam-free.",
   },
 ];
 
+const STATS = [
+  { value: "5+", label: "Sources per post" },
+  { value: "1500–2000", label: "Words, rigorously edited" },
+  { value: "2 hr", label: "Comment moderation cycle" },
+];
+
 const EXAMPLES = [
-  { headline: "How the Namib Beetle's Back Pulls Water from Fog", tags: ["biomimicry", "water-harvesting", "materials"] },
-  { headline: "Termite Mounds and the Buildings That Breathe Like Them", tags: ["biomimicry", "architecture", "HVAC"] },
-  { headline: "Gecko Adhesion: From Setae to Reusable Tape", tags: ["biomimicry", "adhesives", "nanotechnology"] },
+  {
+    headline: "How the Namib Beetle's Back Pulls Water from Fog",
+    excerpt: "A 15 mm beetle has inspired water-collection meshes deployed in arid regions — the secret is in alternating hydrophilic bumps and waxy troughs.",
+    tags: ["biomimicry", "water-harvesting", "materials"],
+  },
+  {
+    headline: "Termite Mounds and the Buildings That Breathe Like Them",
+    excerpt: "The Eastgate Centre in Harare stays cool without central air conditioning, drawing directly on the passive ventilation strategy of Macrotermes michaelseni.",
+    tags: ["biomimicry", "architecture", "HVAC"],
+  },
+  {
+    headline: "Gecko Adhesion: From Setae to Reusable Tape",
+    excerpt: "Van der Waals forces across millions of nanoscale setae let geckos stick to glass. Researchers at Stanford turned the principle into a climbing suit.",
+    tags: ["biomimicry", "adhesives", "nanotechnology"],
+  },
 ];
 
 export default function HomePage() {
@@ -38,21 +56,34 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="hero">
-        <p className="hero-eyebrow">Biomimicry &amp; Innovation</p>
-        <h1 className="hero-headline">
-          3.8 billion years of R&amp;D,<br />
-          open source.
-        </h1>
-        <p className="hero-sub">
-          Nav Web Online publishes deep-dive essays on how living systems — beetles,
-          termites, sharks, fungi — are quietly rewriting engineering, architecture,
-          computing, and medicine.
-        </p>
-        {hasPosts ? (
-          <Link href="#posts" className="btn-primary">Read the latest</Link>
-        ) : (
-          <span className="btn-primary btn-muted">First posts coming soon</span>
-        )}
+        <div className="hero-inner">
+          <p className="hero-eyebrow">Biomimicry &amp; Innovation</p>
+          <h1 className="hero-headline">
+            3.8 billion years of R&amp;D,<br />
+            open source.          
+          </h1>
+          <p className="hero-sub">
+            Deep-dive essays on how living systems — beetles, termites, sharks,
+            fungi — are quietly rewriting engineering, architecture, computing,
+            and medicine.
+          </p>
+          {hasPosts ? (
+            <Link href="#posts" className="btn-primary">Read the latest</Link>
+          ) : (
+            <>
+              <span className="btn-primary btn-muted">First posts coming soon</span>
+              <p className="hero-hint">The agent is warming up — check back shortly.</p>
+            </>
+          )}
+        </div>
+        <ul className="hero-stats">
+          {STATS.map((s) => (
+            <li key={s.label}>
+              <span className="stat-value">{s.value}</span>
+              <span className="stat-label">{s.label}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* ── Feature grid ── */}
@@ -97,7 +128,9 @@ export default function HomePage() {
           <ul className="preview-list">
             {EXAMPLES.map((e) => (
               <li key={e.headline} className="preview-card">
+                <span className="preview-badge">Coming soon</span>
                 <h3 className="preview-headline">{e.headline}</h3>
+                <p className="preview-excerpt">{e.excerpt}</p>
                 <ul className="tags">
                   {e.tags.map((t) => <li key={t}>#{t}</li>)}
                 </ul>
@@ -108,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* ── About strip ── */}
-      <section className="about-strip">
+      <section id="about" className="about-strip">
         <div className="about-inner">
           <h2>What is biomimicry?</h2>
           <p>
@@ -120,8 +153,8 @@ export default function HomePage() {
           </p>
           <p>
             Nav Web Online exists to close the gap between biology papers and
-            engineering practice. Each essay is written to be read by a curious
-            technologist, not just an academic.
+            engineering practice. Each essay is written to be understood by a curious
+            technologist, not just a specialist.
           </p>
         </div>
       </section>
