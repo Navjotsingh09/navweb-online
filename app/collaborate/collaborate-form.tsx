@@ -6,8 +6,10 @@ type Step = 0 | 1 | 2 | 3;
 
 const PROJECT_TYPES = [
   "Editorial / writing",
-  "Web build",
-  "Brand & design",
+  "Web development",
+  "Mobile app development",
+  "Figma designs",
+  "AI-assisted fast code",
   "Research",
   "Speaking / workshop",
   "Other",
