@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getPost, listPostSlugs } from "@/lib/posts";
 import { resolveUnsplashImages } from "@/lib/unsplash";
 import type { AgentImage } from "@/lib/unsplash";
+import Comments from "@/components/Comments";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -107,6 +108,7 @@ export default async function PostPage({
         className="prose"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+      <Comments postSlug={slug} />
     </article>
   );
 }

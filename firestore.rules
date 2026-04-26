@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /comments/{commentId} {
+      // Anyone can read approved comments
+      allow read: if resource.data.status == "approved";
+
+      // Anyone can create a pending comment (server validates the rest)
+      allow create: if request.resource.data.status == "pending"
+                    && request.resource.data.body is string
+                    && request.resource.data.body.size() >= 10
+                    && request.resource.data.body.size() <= 2000
+                    && request.resource.data.author is string
+                    && request.resource.data.author.size() > 0
+                    && request.resource.data.postSlug is string
+                    && request.resource.data.postSlug.matches('^[a-z0-9-]+$');
+
+      // Only server-side (Admin SDK, bypasses rules) can update/delete
+      allow update, delete: if false;
+    }
+  }
+}
