@@ -25,6 +25,7 @@ export async function generateMetadata({
 
   const postUrl = `${SITE_URL}/posts/${slug}`;
   const excerpt = post.raw
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/^#.*$/gm, "")
     .replace(/[#*`>\[\]]/g, "")
     .trim()
@@ -85,6 +86,7 @@ export default async function PostPage({
   const allPosts = listPosts();
   const relatedPosts = findRelatedPosts(slug, allPosts, post.tags, 3);
   const excerpt = post.raw
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/^#.*$/gm, "")
     .replace(/[#*`>\[\]]/g, "")
     .trim()

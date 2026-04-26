@@ -7,7 +7,6 @@ tags: [biomimicry, ux, mobile, haptics, sensory-design, apple, design-patterns]
 
 # Apple iOS Haptics — How a Phone Learned to Tap You Back Like a Cat
 
-![Apple logo](https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg)
 
 When you toggle a switch in iOS, you feel a tiny, *specific* tap. Not a buzz. Not a rattle. A single, precise click that lands somewhere between "a fingertip on a real switch" and "a cat's paw on your wrist." Apple ships an entire taxonomy of these — light, medium, heavy, success, warning, error, selection — and the reason they feel **right** instead of **mechanical** is that the design was reverse-engineered from how animal nervous systems handle tactile signal.
 
