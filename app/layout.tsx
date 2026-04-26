@@ -1,10 +1,33 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://navweb-online.vercel.app";
+const SITE_NAME = "Nav Web Online";
+const SITE_DESC =
+  "How natural systems inspire the technology of tomorrow. Essays on biomimicry, bio-inspired engineering, and design lessons from evolution.";
+
 export const metadata: Metadata = {
-  title: "Nav Web Online — Biomimicry & Innovation",
-  description:
-    "How natural systems inspire the technology of tomorrow. Essays on biomimicry, bio-inspired engineering, and design lessons from evolution.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — Biomimicry & Innovation`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESC,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — Biomimicry & Innovation`,
+    description: SITE_DESC,
+    url: SITE_URL,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Biomimicry & Innovation`,
+    description: SITE_DESC,
+    images: ["/og-default.png"],
+  },
+  alternates: { canonical: SITE_URL },
 };
 
 export default function RootLayout({
