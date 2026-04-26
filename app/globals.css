@@ -2209,19 +2209,14 @@ a {
    FLOATING GLASS NAVBAR
 ══════════════════════════════════════════════ */
 .floating-nav-wrap {
-  position: fixed;
-  top: 16px;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 50;
   display: flex;
   justify-content: center;
-  pointer-events: none;
-  padding: 0 clamp(16px, 4vw, 64px);
+  padding: 16px clamp(16px, 4vw, 64px) 0;
 }
 
 .floating-nav {
-  pointer-events: auto;
   width: 100%;
   max-width: 1280px;
   display: flex;
@@ -2315,6 +2310,5 @@ a {
   .floating-nav-cta-mobile { display: inline-flex; }
 }
 
-/* Push page content below the floating navbar */
-.site-main { padding-top: 84px; }
-@media (max-width: 720px) { .site-main { padding-top: 72px; } }
+/* Navbar is in normal flow now; no extra top padding needed */
+.site-main { padding-top: 0; }
