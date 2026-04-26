@@ -19,6 +19,8 @@ What emerges is **swarm intelligence** [2]: coordinated problem-solving by simpl
 
 Selection pressure shaped this system over roughly 100 million years. Ant colonies that wasted energy on inefficient foraging routes were outcompeted by those with better chemical signaling. The result: an algorithm so elegant that in the 1990s, a computer scientist watched the phenomenon and thought: *Could we use this to solve the traveling salesman problem?*
 
+![Pheromone trail formation showing how ants reinforce strong paths](/images/pheromone-trail.svg)
+
 ## From Biology to Engineering: The Birth of Ant Colony Optimization
 
 In 1992, Italian researcher Marco Dorigo published his doctoral thesis on a new metaheuristic he called **Ant System** [3]. The insight was direct: represent cities or nodes as a graph, release virtual "ants" (parallel computing processes) to explore tours, and have them deposit digital pheromones on edges they traverse. Just as biological ants reinforce good paths and let poor ones fade, Dorigo's ants would explore potential routes, with the best tours accruing higher pheromone concentrations. On the next iteration, new ants would prefer high-pheromone edges, but randomness ensured exploration didn't collapse into local optima.
@@ -31,7 +33,11 @@ ACO's power lies in three features:
 2. **Adaptivity**: Pheromone updates allow the algorithm to respond to dynamic changes — if a road is closed or demand spikes, the pheromone landscape shifts and new solutions emerge.
 3. **Robustness**: Unlike rigid optimization algorithms, ACO gracefully degrades; losing a few ants doesn't crash the system.
 
+![ACO algorithm flowchart showing the four-step cycle](/images/aco-algorithm.svg)
+
 By the 2010s, ACO had moved from academic papers into production systems at some of the world's most data-intensive companies.
+
+![Nature vs algorithm: core principles of ant behavior mapped to digital systems](/images/nature-vs-algorithm.svg)
 
 ## The Technology Today: Tesla Autopilot and Uber's Matching Engine
 
@@ -52,6 +58,8 @@ Uber's team published research on its dispatch system, describing a hybrid appro
 For surge pricing, the mechanism is even more direct: Uber models demand hotspots as "high-pheromone zones" and draws drivers toward them using incentive multipliers [9]. As demand is satisfied, pheromone concentrations drop, allowing drivers to disperse. The result: prices rise quickly during emergencies but fall smoothly as supply adjusts, and drivers flow to high-need areas without explicit routing commands.
 
 Unlike a human dispatcher who can handle a few hundred requests per hour, Uber's algorithm processes tens of thousands of matches per second across multiple cities, all while adapting to real-time demand and driver availability.
+
+![ACO principles in real-world systems: Tesla FSD routing and Uber ride matching](/images/aco-realworld.svg)
 
 ## Limits, Trade-offs, and What's Next
 

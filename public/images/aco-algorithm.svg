@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f7f5f0"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-size="24" font-weight="600" text-anchor="middle" fill="#1c1c1c">Ant Colony Optimization Algorithm</text>
+  
+  <!-- Step 1: Initialize -->
+  <rect x="50" y="70" width="140" height="60" fill="#e8f3eb" stroke="#2f6f4f" stroke-width="2" rx="6"/>
+  <text x="120" y="95" font-size="13" font-weight="600" text-anchor="middle" fill="#1c1c1c">1. Initialize</text>
+  <text x="120" y="115" font-size="11" text-anchor="middle" fill="#5b6b5a">Place ants randomly</text>
+  
+  <!-- Arrow -->
+  <path d="M 190 100 L 230 100" stroke="#2f6f4f" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Construct Solution -->
+  <rect x="230" y="70" width="140" height="60" fill="#e8f3eb" stroke="#2f6f4f" stroke-width="2" rx="6"/>
+  <text x="300" y="95" font-size="13" font-weight="600" text-anchor="middle" fill="#1c1c1c">2. Build Tours</text>
+  <text x="300" y="115" font-size="11" text-anchor="middle" fill="#5b6b5a">Follow pheromone + random</text>
+  
+  <!-- Arrow -->
+  <path d="M 370 100 L 410 100" stroke="#2f6f4f" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Evaluate -->
+  <rect x="410" y="70" width="140" height="60" fill="#e8f3eb" stroke="#2f6f4f" stroke-width="2" rx="6"/>
+  <text x="480" y="95" font-size="13" font-weight="600" text-anchor="middle" fill="#1c1c1c">3. Evaluate</text>
+  <text x="480" y="115" font-size="11" text-anchor="middle" fill="#5b6b5a">Calculate tour cost</text>
+  
+  <!-- Arrow -->
+  <path d="M 550 100 L 590 100" stroke="#2f6f4f" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Update Pheromone -->
+  <rect x="590" y="70" width="160" height="60" fill="#e8f3eb" stroke="#2f6f4f" stroke-width="2" rx="6"/>
+  <text x="670" y="95" font-size="13" font-weight="600" text-anchor="middle" fill="#1c1c1c">4. Update Pheromone</text>
+  <text x="670" y="115" font-size="11" text-anchor="middle" fill="#5b6b5a">Reinforce good paths</text>
+  
+  <!-- Feedback loop -->
+  <path d="M 670 130 Q 670 200 120 200 Q 50 200 120 130" stroke="#4a9e5c" stroke-width="2" fill="none" marker-end="url(#arrowhead-green)" stroke-dasharray="5,5"/>
+  <text x="400" y="220" font-size="11" fill="#4a9e5c" text-anchor="middle" font-weight="600">Repeat until convergence</text>
+  
+  <!-- Result section -->
+  <line x1="50" y1="280" x2="750" y2="280" stroke="#d8d4c7" stroke-width="1"/>
+  
+  <!-- Best solution -->
+  <rect x="50" y="300" width="680" height="160" fill="#fff" stroke="#d8d4c7" stroke-width="1" rx="4"/>
+  
+  <text x="70" y="325" font-size="14" font-weight="600" fill="#1c1c1c">Network Nodes</text>
+  
+  <!-- Network visualization -->
+  <circle cx="120" cy="380" r="12" fill="#2f6f4f"/>
+  <circle cx="200" cy="360" r="12" fill="#2f6f4f"/>
+  <circle cx="300" cy="390" r="12" fill="#2f6f4f"/>
+  <circle cx="400" cy="370" r="12" fill="#2f6f4f"/>
+  <circle cx="500" cy="350" r="12" fill="#2f6f4f"/>
+  <circle cx="600" cy="385" r="12" fill="#2f6f4f"/>
+  <circle cx="680" cy="365" r="12" fill="#2f6f4f"/>
+  
+  <!-- Optimal path (thick line) -->
+  <path d="M 120 380 L 200 360 L 300 390 L 400 370 L 500 350 L 600 385 L 680 365" stroke="#4a9e5c" stroke-width="3" fill="none" opacity="0.7"/>
+  
+  <!-- Other paths (thin lines) -->
+  <path d="M 120 380 L 300 390 L 500 350 L 680 365" stroke="#7dbf8e" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M 120 380 L 400 370 L 600 385 L 680 365" stroke="#7dbf8e" stroke-width="1" fill="none" opacity="0.3"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2f6f4f"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4a9e5c"/>
+    </marker>
+  </defs>
+  
+  <text x="400" y="450" font-size="12" text-anchor="middle" fill="#5b6b5a">Best route emerges through iterative reinforcement</text>
+</svg>
