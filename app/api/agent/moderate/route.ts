@@ -6,16 +6,6 @@
  *
  * Reads all "pending" comments from Firestore, applies heuristic moderation,
  * and updates each comment to "approved" or "flagged" with a reason.
- *
- * Heuristics (fast, zero extra API cost):
- *   FLAG  — contains URLs/links (common spam vector)
- *   FLAG  — body is fewer than 10 characters
- *   FLAG  — body is more than 95% repeated characters
- *   FLAG  — contains known spam phrases
- *   APPROVE — everything else
- *
- * To upgrade to LLM moderation: replace runHeuristics() with a call to the
- * Anthropic SDK using ANTHROPIC_API_KEY and pass the comment body to Claude.
  */
 import { NextRequest, NextResponse } from "next/server";
 import { getFirestore } from "@/lib/firebase-admin";
@@ -53,7 +43,6 @@ function runHeuristics(body: string): { action: "approve" | "flag"; reason: stri
     }
   }
 
-  // Repeated-character check: flag if top char > 95% of body
   const freq: Record<string, number> = {};
   for (const ch of body.replace(/\s/g, "")) freq[ch] = (freq[ch] ?? 0) + 1;
   const nonSpaceLen = body.replace(/\s/g, "").length;
@@ -68,7 +57,6 @@ function runHeuristics(body: string): { action: "approve" | "flag"; reason: stri
 }
 
 export async function POST(req: NextRequest) {
-  // Validate cron secret to prevent unauthorized moderation runs
   const secret = process.env.CRON_SECRET;
   if (secret) {
     const auth = req.headers.get("authorization");
@@ -79,10 +67,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const db = getFirestore();
-    const snap = await db
-      .collection("comments")
-      .where("status", "==", "pending")
-      .get();
+    const snap = await db.collection("comments").where("status", "==", "pending").get();
 
     if (snap.empty) {
       return NextResponse.json({ moderated: 0, message: "No pending comments." });

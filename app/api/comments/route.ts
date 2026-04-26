@@ -66,7 +66,6 @@ export async function POST(req: NextRequest) {
 
   const { postSlug, author, body: commentBody } = body as Record<string, string>;
 
-  // Input validation
   const authorTrimmed = author.trim().slice(0, MAX_AUTHOR_LEN);
   const bodyTrimmed = commentBody.trim().slice(0, MAX_BODY_LEN);
   const slugTrimmed = postSlug.trim();

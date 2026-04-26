@@ -1,26 +1,22 @@
 import Link from "next/link";
 import { listPosts } from "@/lib/posts";
 
-const FEATURES = [
+const SIGNALS = [
   {
-    icon: "○",
-    title: "Research-first",
-    body: "Every post sources at least 5 peer-reviewed papers, university press releases, or primary science publications. No SEO filler.",
+    label: "Research-first",
+    body: "Every essay is built from primary papers, university labs, and product evidence rather than generic trend commentary.",
   },
   {
-    icon: "→",
-    title: "Nature → Engineering",
-    body: "We trace the full arc: organism → biological mechanism → prototype → real product. Always specific, always cited.",
+    label: "Translation arc",
+    body: "The structure stays consistent: organism, mechanism, prototype, and present-day engineering use, always with citations.",
   },
   {
-    icon: "◈",
-    title: "AI-drafted content",
-    body: "Posts are drafted by the Biomimicry Blogger, a VS Code agent that researches, writes, and quality-checks every piece.",
+    label: "Tight scope",
+    body: "The archive stays focused on biomimicry, materials, mobility, medicine, robotics, and climate-adaptive systems.",
   },
   {
-    icon: "◻",
-    title: "Moderated comments",
-    body: "Reader comments go through an automated moderation pass every 2 hours — conversations stay substantive and spam-free.",
+    label: "Moderated discussion",
+    body: "Reader responses are reviewed before publication so the conversation remains technical, useful, and free of spam.",
   },
 ];
 
@@ -30,53 +26,62 @@ const STATS = [
   { value: "2 hr", label: "Comment moderation cycle" },
 ];
 
-const EXAMPLES = [
-  {
-    headline: "How the Namib Beetle's Back Pulls Water from Fog",
-    excerpt: "A 15 mm beetle has inspired water-collection meshes deployed in arid regions — the secret is in alternating hydrophilic bumps and waxy troughs.",
-    tags: ["biomimicry", "water-harvesting", "materials"],
-  },
-  {
-    headline: "Termite Mounds and the Buildings That Breathe Like Them",
-    excerpt: "The Eastgate Centre in Harare stays cool without central air conditioning, drawing directly on the passive ventilation strategy of Macrotermes michaelseni.",
-    tags: ["biomimicry", "architecture", "HVAC"],
-  },
-  {
-    headline: "Gecko Adhesion: From Setae to Reusable Tape",
-    excerpt: "Van der Waals forces across millions of nanoscale setae let geckos stick to glass. Researchers at Stanford turned the principle into a climbing suit.",
-    tags: ["biomimicry", "adhesives", "nanotechnology"],
-  },
-];
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
 
 export default function HomePage() {
   const posts = listPosts();
-  const hasPosts = posts.length > 0;
+  const featured = posts[0];
+  const columnPosts = posts.slice(1, 4);
+  const archive = posts.slice(4, 9);
 
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="hero">
-        <div className="hero-inner">
-          <p className="hero-eyebrow">Biomimicry &amp; Innovation</p>
-          <h1 className="hero-headline">
-            3.8 billion years of R&amp;D,<br />
-            open source.          
-          </h1>
-          <p className="hero-sub">
-            Deep-dive essays on how living systems — beetles, termites, sharks,
-            fungi — are quietly rewriting engineering, architecture, computing,
-            and medicine.
+      <section className="home-masthead">
+        <div className="home-masthead-copy">
+          <p className="posts-kicker">Issue one / editorial field guide</p>
+          <h1 className="home-title">Nature keeps shipping prototypes. We read the release notes.</h1>
+          <p className="home-intro">
+            Nav Web Online is an editorial archive on biomimicry: how beetles,
+            jellyfish, termites, butterflies, geckos, and whales quietly inform
+            buildings, materials, vehicles, medical devices, and interfaces.
           </p>
-          {hasPosts ? (
-            <Link href="#posts" className="btn-primary">Read the latest</Link>
-          ) : (
-            <>
-              <span className="btn-primary btn-muted">First posts coming soon</span>
-              <p className="hero-hint">The agent is warming up — check back shortly.</p>
-            </>
-          )}
+          <div className="home-actions">
+            <Link href="/posts" className="btn-primary">Browse the archive</Link>
+            {featured && (
+              <Link href={`/posts/${featured.slug}`} className="btn-secondary">
+                Read the latest essay
+              </Link>
+            )}
+          </div>
         </div>
-        <ul className="hero-stats">
+        <aside className="home-ledger">
+          <div className="posts-ledger-row">
+            <span>Edition</span>
+            <strong>Spring 2026</strong>
+          </div>
+          <div className="posts-ledger-row">
+            <span>Archive size</span>
+            <strong>{posts.length} essays</strong>
+          </div>
+          <div className="posts-ledger-row">
+            <span>Format</span>
+            <strong>Long-form case studies</strong>
+          </div>
+          <div className="posts-ledger-row">
+            <span>Review cadence</span>
+            <strong>2-hour moderation cycle</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section className="home-stats-band">
+        <ul className="hero-stats home-stats-grid">
           {STATS.map((s) => (
             <li key={s.label}>
               <span className="stat-value">{s.value}</span>
@@ -86,75 +91,80 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* ── Feature grid ── */}
-      <section className="features-section">
-        <ul className="features-grid">
-          {FEATURES.map((f) => (
-            <li key={f.title} className="feature-card">
-              <span className="feature-icon">{f.icon}</span>
-              <h3 className="feature-title">{f.title}</h3>
-              <p className="feature-body">{f.body}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* ── Posts or preview ── */}
-      <section id="posts" className="posts-section">
-        <h2 className="section-heading">
-          {hasPosts ? "Latest essays" : "What to expect"}
-        </h2>
-
-        {hasPosts ? (
-          <ul className="post-list">
-            {posts.map((p) => (
-              <li key={p.slug}>
-                <Link href={`/posts/${p.slug}`}>
-                  <h2>{p.title}</h2>
-                </Link>
-                {p.date && <time dateTime={p.date}>{p.date}</time>}
-                {p.excerpt && <p>{p.excerpt}…</p>}
-                {p.tags.length > 0 && (
-                  <ul className="tags">
-                    {p.tags.map((t) => (
-                      <li key={t}>#{t}</li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="preview-list">
-            {EXAMPLES.map((e) => (
-              <li key={e.headline} className="preview-card">
-                <span className="preview-badge">Coming soon</span>
-                <h3 className="preview-headline">{e.headline}</h3>
-                <p className="preview-excerpt">{e.excerpt}</p>
-                <ul className="tags">
-                  {e.tags.map((t) => <li key={t}>#{t}</li>)}
-                </ul>
-              </li>
-            ))}
-          </ul>
+      <section className="home-journal" id="posts">
+        {featured && (
+          <article className="home-featured-story">
+            <p className="story-label">Lead essay</p>
+            <Link href={`/posts/${featured.slug}`} className="lead-story-link">
+              <h2>{featured.title}</h2>
+            </Link>
+            <div className="lead-story-meta">
+              <time dateTime={featured.date}>{formatDate(featured.date)}</time>
+              <span>·</span>
+              <span>{featured.tags.slice(0, 2).join(" / ")}</span>
+            </div>
+            {featured.excerpt && <p className="lead-story-excerpt">{featured.excerpt}…</p>}
+          </article>
         )}
+
+        <div className="home-story-column">
+          <div className="home-story-heading">
+            <p className="posts-kicker">Latest from the archive</p>
+            <h2>Recent essays and reporting threads</h2>
+          </div>
+          {columnPosts.map((post, index) => (
+            <article key={post.slug} className="home-story-card">
+              <span className="home-story-index">0{index + 1}</span>
+              <div>
+                <Link href={`/posts/${post.slug}`} className="secondary-story-link">
+                  <h3>{post.title}</h3>
+                </Link>
+                {post.excerpt && <p>{post.excerpt}…</p>}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
-      {/* ── About strip ── */}
-      <section id="about" className="about-strip">
-        <div className="about-inner">
-          <h2>What is biomimicry?</h2>
+      <section className="home-signals">
+        {SIGNALS.map((signal) => (
+          <article key={signal.label} className="signal-card">
+            <p className="posts-kicker">{signal.label}</p>
+            <p>{signal.body}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="home-archive-strip">
+        <div className="home-archive-header">
+          <p className="posts-kicker">Notebook</p>
+          <h2>More organisms, more mechanisms, more prototypes.</h2>
+        </div>
+        <div className="home-archive-list">
+          {archive.map((post) => (
+            <article key={post.slug} className="home-archive-entry">
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
+              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="home-manifesto">
+        <div className="home-manifesto-copy">
+          <p className="posts-kicker">About the journal</p>
+          <h2>Biomimicry is not moodboarding nature. It is reverse-engineering survival.</h2>
+        </div>
+        <div className="home-manifesto-body">
           <p>
-            Biomimicry is the practice of studying nature's time-tested patterns
-            and strategies, then emulating those designs to solve human challenges.
-            Selection pressure over millions of generations has produced solutions
-            that are energy-efficient, durable, and self-repairing — qualities
-            engineers spend careers trying to replicate.
+            This publication focuses on the transfer layer between biology and engineering:
+            not simply that an organism is interesting, but why its mechanism survives,
+            how it was measured, and where that insight becomes a repeatable human system.
           </p>
           <p>
-            Nav Web Online exists to close the gap between biology papers and
-            engineering practice. Each essay is written to be understood by a curious
-            technologist, not just a specialist.
+            The goal is to turn academic findings into readable field notes for designers,
+            founders, engineers, and researchers who want stronger references than trend decks
+            and softer metaphors.
           </p>
         </div>
       </section>

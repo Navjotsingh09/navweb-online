@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://navweb-online.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
 const SITE_NAME = "Nav Web Online";
 const SITE_DESC =
   "How natural systems inspire the technology of tomorrow. Essays on biomimicry, bio-inspired engineering, and design lessons from evolution.";
@@ -39,19 +40,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="site-header">
-          <a className="brand" href="/">
-            Nav Web Online
-          </a>
-          <nav>
-            <a href="/posts" style={{ marginRight: "1.25rem" }}>Posts</a>
-            <a href="/#about">About</a>
-          </nav>
-        </header>
+        <div className="site-shell">
+          <div className="site-ribbon">
+            <span>Biomimicry journal</span>
+            <span>Case studies from biology to engineering</span>
+          </div>
+          <header className="site-header">
+            <Link className="brand" href="/">
+              <span className="brand-mark">NW</span>
+              <span className="brand-copy">
+                <strong>Nav Web Online</strong>
+                <small>Journal of biomimicry and innovation</small>
+              </span>
+            </Link>
+            <nav className="site-nav">
+              <Link href="/">Index</Link>
+              <Link href="/posts">Archive</Link>
+              <Link href="/#about">About</Link>
+            </nav>
+          </header>
+        </div>
         <Analytics />
         <main>{children}</main>
         <footer className="site-footer">
-          <p>© {new Date().getFullYear()} Nav Web Online · Biomimicry & Innovation</p>
+          <div className="site-footer-inner">
+            <p>© {new Date().getFullYear()} Nav Web Online</p>
+            <p>Editorial notes on organisms, mechanisms, prototypes, and products.</p>
+          </div>
         </footer>
       </body>
     </html>
