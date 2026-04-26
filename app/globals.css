@@ -2838,3 +2838,194 @@ a {
   .collab-intro { position: static; }
   .collab-field-row { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════════
+   ABOUT THE JOURNAL — cinematic dark block
+══════════════════════════════════════════════ */
+.about-cinema {
+  margin: 56px -24px 28px;
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 5vw, 64px);
+  border-radius: 24px;
+  background:
+    radial-gradient(1100px 600px at 80% -10%, rgba(40, 60, 90, 0.55), transparent 60%),
+    radial-gradient(800px 500px at 0% 110%, rgba(30, 45, 70, 0.45), transparent 55%),
+    linear-gradient(180deg, #050810 0%, #0b1220 100%);
+  color: #ffffff;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.about-cinema::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(800px 400px at 50% 0%, rgba(255, 255, 255, 0.05), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-cinema-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-cinema-head { display: flex; flex-direction: column; gap: 18px; }
+
+.about-cinema-kicker {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font: 500 0.72rem/1 "Barlow", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06) !important;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.about-cinema-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+.about-cinema-title-italic {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.about-cinema-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.about-cinema-copy { display: flex; flex-direction: column; gap: 16px; }
+
+.about-cinema-lede {
+  margin: 0;
+  font: 300 1.05rem/1.6 "Barlow", ui-sans-serif, system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 52ch;
+}
+
+.about-cinema-lede em {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 1.12em;
+}
+
+.about-cinema-body {
+  margin: 0;
+  font: 300 0.95rem/1.6 "Barlow", sans-serif;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 52ch;
+}
+
+.about-cinema-actions {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.about-cinema-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #04060a !important;
+  font: 600 0.9rem/1 "Barlow", sans-serif;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.about-cinema-cta:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: #04060a !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.about-cinema-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font: 500 0.9rem/1 "Barlow", sans-serif;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.about-cinema-link:hover {
+  color: #ffffff !important;
+  border-color: #ffffff;
+  text-decoration: none;
+}
+
+.about-cinema-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-cinema-principle {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-cinema-principle:first-child { border-top: none; padding-top: 4px; }
+.about-cinema-principle:last-child { padding-bottom: 4px; }
+
+.about-cinema-principle-num {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: -0.02em;
+}
+
+.about-cinema-principle-title {
+  margin: 0 0 6px;
+  font: 500 0.98rem/1.2 "Barlow", sans-serif;
+  color: #ffffff;
+  letter-spacing: -0.005em;
+}
+
+.about-cinema-principle-body {
+  margin: 0;
+  font: 300 0.88rem/1.55 "Barlow", sans-serif;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 880px) {
+  .about-cinema { margin: 40px -16px 24px; }
+  .about-cinema-grid { grid-template-columns: 1fr; gap: 32px; }
+}

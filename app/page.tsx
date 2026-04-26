@@ -189,22 +189,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="ux-about-grid">
-        <div className="ux-about-copy">
-          <p className="ux-kicker">About the journal</p>
-          <h2>Biomimicry is not moodboarding nature. It is reverse-engineering survival.</h2>
-        </div>
-        <div className="ux-about-body">
-          <p>
-            This publication focuses on the transfer layer between biology and engineering:
-            not simply that an organism is interesting, but why its mechanism survives,
-            how it was measured, and where that insight becomes a repeatable human system.
-          </p>
-          <p>
-            The goal is to turn academic findings into readable field notes for designers,
-            founders, engineers, and researchers who want stronger references than trend decks
-            and softer metaphors.
-          </p>
+      <section id="about" className="about-cinema">
+        <div className="about-cinema-inner">
+          <div className="about-cinema-head">
+            <span className="about-cinema-kicker liquid-glass">About the journal</span>
+            <h2 className="about-cinema-title">
+              <span>Biomimicry isn&apos;t moodboarding nature.</span>
+              <span className="about-cinema-title-italic">It&apos;s reverse-engineering survival.</span>
+            </h2>
+          </div>
+
+          <div className="about-cinema-grid">
+            <div className="about-cinema-copy">
+              <p className="about-cinema-lede">
+                A field journal sitting on the transfer layer between biology and
+                engineering — not why an organism is interesting, but{" "}
+                <em>why its mechanism survives</em>, how it was measured, and where
+                the insight becomes a repeatable human system.
+              </p>
+              <p className="about-cinema-body">
+                Each essay turns peer-reviewed findings into readable field notes for
+                designers, founders, engineers, and researchers who want stronger
+                references than trend decks and softer metaphors.
+              </p>
+
+              <div className="about-cinema-actions">
+                <Link href="/posts" className="about-cinema-cta">
+                  <span>Start with the latest essay</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7" />
+                    <path d="M7 7h10v10" />
+                  </svg>
+                </Link>
+                <Link href="/topics" className="about-cinema-link">Browse topics →</Link>
+              </div>
+            </div>
+
+            <ul className="about-cinema-principles" aria-label="Editorial principles">
+              {[
+                {
+                  num: "01",
+                  title: "Mechanism over metaphor",
+                  body: "Every claim ties back to a measurable biological mechanism, not a vibe.",
+                },
+                {
+                  num: "02",
+                  title: "Citations, not vibes",
+                  body: "Sources are linked. Trade-offs and failure modes are named.",
+                },
+                {
+                  num: "03",
+                  title: "Built for builders",
+                  body: "Field notes you can ship from — for product, materials, and systems.",
+                },
+              ].map((p) => (
+                <li key={p.num} className="about-cinema-principle">
+                  <span className="about-cinema-principle-num">{p.num}</span>
+                  <div>
+                    <p className="about-cinema-principle-title">{p.title}</p>
+                    <p className="about-cinema-principle-body">{p.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </div>
