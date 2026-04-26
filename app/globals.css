@@ -1543,6 +1543,21 @@ a {
   font-size: 1.03rem;
 }
 
+.ux-hero-media {
+  margin: 20px 0 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #dfe6ed;
+  background: linear-gradient(180deg, #f7fafc 0%, #edf3f8 100%);
+}
+
+.ux-hero-media img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
 .ux-actions {
   margin-top: 34px;
   display: flex;
@@ -1927,6 +1942,10 @@ a {
   .ux-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .ux-hero-media img {
+    max-height: 220px;
   }
 
   .ux-signals-grid {
