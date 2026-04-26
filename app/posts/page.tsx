@@ -2,16 +2,19 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { listPosts } from '@/lib/posts';
+import type { PostMeta } from '@/lib/posts';
 import { getAllTags, filterPostsByTag, getReadingTime } from '@/lib/post-utils';
 
-export default function PostsPage() {
-  const allPosts = listPosts();
-  const allTags = getAllTags(allPosts);
+interface PostsPageProps {
+  posts: PostMeta[];
+}
+
+function PostsPageClient({ posts }: PostsPageProps) {
+  const allTags = getAllTags(posts);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const filteredPosts = useMemo(
-    () => filterPostsByTag(allPosts, selectedTags),
+    () => filterPostsByTag(posts, selectedTags),
     [selectedTags]
   );
 
@@ -121,4 +124,13 @@ export default function PostsPage() {
       )}
     </div>
   );
+}
+
+// Server component that fetches data
+export default function PostsPage() {
+  // Dynamic import of server-only function
+  const { listPosts } = require('@/lib/posts');
+  const posts = listPosts();
+
+  return <PostsPageClient posts={posts} />;
 }
