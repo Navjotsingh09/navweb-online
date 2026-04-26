@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://navweb-online.vercel.app";
@@ -46,6 +47,7 @@ export default function RootLayout({
             <a href="/">Posts</a>
           </nav>
         </header>
+        <Analytics />
         <main className="container">{children}</main>
         <footer className="site-footer">
           <p>© {new Date().getFullYear()} Nav Web Online · Biomimicry & Innovation</p>

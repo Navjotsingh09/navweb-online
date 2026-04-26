@@ -1,5 +1,9 @@
 import { notFound } from "next/navigation";
 import { getPost, listPostSlugs } from "@/lib/posts";
+import { resolveUnsplashImages } from "@/lib/unsplash";
+import type { AgentImage } from "@/lib/unsplash";
+import fs from "node:fs";
+import path from "node:path";
 
 export async function generateStaticParams() {
   return listPostSlugs().map((slug) => ({ slug }));
@@ -55,6 +59,26 @@ export default async function PostPage({
   const post = await getPost(slug);
   if (!post) notFound();
 
+  // Load hero image from agent JSON sidecar if present
+  let heroImage: { url: string; thumb: string; credit: string; credit_url: string } | null = null;
+  const sidecarPath = path.join(process.cwd(), "content", "posts", `${slug}.json`);
+  if (fs.existsSync(sidecarPath)) {
+    try {
+      const sidecar = JSON.parse(fs.readFileSync(sidecarPath, "utf8")) as {
+        images?: AgentImage[];
+      };
+      const naturalImages = (sidecar.images ?? []).filter(
+        (img) => img.subject === "natural_system"
+      );
+      if (naturalImages.length > 0) {
+        const resolved = await resolveUnsplashImages([naturalImages[0]]);
+        if (resolved[0]?.url) heroImage = resolved[0];
+      }
+    } catch {
+      // sidecar malformed — skip hero image
+    }
+  }
+
   return (
     <article className="post">
       <header>
@@ -68,6 +92,17 @@ export default async function PostPage({
           </ul>
         )}
       </header>
+      {heroImage && (
+        <figure className="hero-image">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={heroImage.url} alt={heroImage.credit} />
+          <figcaption>
+            <a href={heroImage.credit_url} target="_blank" rel="noopener noreferrer">
+              {heroImage.credit}
+            </a>
+          </figcaption>
+        </figure>
+      )}
       <div
         className="prose"
         dangerouslySetInnerHTML={{ __html: post.html }}
