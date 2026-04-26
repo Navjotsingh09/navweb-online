@@ -61,10 +61,9 @@ export default function RootLayout({
               <Link className="floating-nav-link" href="/">Home</Link>
               <Link className="floating-nav-link" href="/posts">Essays</Link>
               <Link className="floating-nav-link" href="/topics">Topics</Link>
-              <Link className="floating-nav-link" href="/collaborate">Collaborate</Link>
               <Link className="floating-nav-link" href="/#about">About</Link>
               <Link className="floating-nav-cta" href="/collaborate">
-                <span>Get the latest</span>
+                <span>Collaborate</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M7 17 17 7" />
                   <path d="M7 7h10v10" />
@@ -72,8 +71,8 @@ export default function RootLayout({
               </Link>
             </nav>
 
-            <Link className="floating-nav-cta floating-nav-cta-mobile" href="/collaborate" aria-label="Get the latest">
-              <span>Get the latest</span>
+            <Link className="floating-nav-cta floating-nav-cta-mobile" href="/collaborate" aria-label="Collaborate">
+              <span>Collaborate</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M7 17 17 7" />
                 <path d="M7 7h10v10" />

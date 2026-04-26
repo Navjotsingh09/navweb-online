@@ -8,7 +8,6 @@ const LINKS: { href: Route; label: string }[] = [
   { href: "/", label: "Home" },
   { href: "/posts", label: "Essays" },
   { href: "/topics", label: "Topics" },
-  { href: "/collaborate", label: "Collaborate" },
   { href: "/#about" as Route, label: "About" },
 ];
 
@@ -94,7 +93,7 @@ export function MobileMenu() {
             className="mobile-menu-cta"
             onClick={() => setOpen(false)}
           >
-            <span>Get the latest</span>
+            <span>Collaborate</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M7 17 17 7" />
               <path d="M7 7h10v10" />
