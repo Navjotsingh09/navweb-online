@@ -37,8 +37,6 @@ ACO's power lies in three features:
 
 By the 2010s, ACO had moved from academic papers into production systems at some of the world's most data-intensive companies.
 
-![Nature vs algorithm: core principles of ant behavior mapped to digital systems](/images/nature-vs-algorithm.svg)
-
 ## The Technology Today: Tesla Autopilot and Uber's Matching Engine
 
 **Tesla's Autonomous Navigation**
@@ -76,6 +74,10 @@ Three billion years before humans invented the traveling salesman problem, ants 
 When Marco Dorigo watched ants at work and asked "Could I code that?" he didn't invent something new. He *translated* an existing solution, already debugged by evolution. The result is an algorithm now embedded in systems that move billions of dollars and billions of people daily. Tesla's vehicles navigate thanks in part to pheromone-inspired planning. Uber's matching engine connects riders and drivers using stigmergy-derived weighting. The ants aren't in the code, but their logic is.
 
 This is biomimicry at scale: not a gimmick or a metaphor, but a practical translation of a proven design principle from the natural world into silicon, deployed where it matters. The ant colony's invisible chemical language has become a visible force in the digital economy.
+
+## Watch on YouTube
+
+- [Ant Colony Optimization for Vehicle Routing (YouTube)](https://www.youtube.com/results?search_query=ant+colony+optimization+vehicle+routing)
 
 ## Sources
 

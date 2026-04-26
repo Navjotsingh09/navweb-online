@@ -62,8 +62,8 @@ export default function HomePage() {
         </p>
         <figure className="ux-hero-media" aria-label="Biomimicry hero illustration">
           <img
-            src="/images/nature-vs-algorithm.svg"
-            alt="Diagram comparing natural swarm behavior with algorithmic optimization"
+            src="/images/whale-tubercles.svg"
+            alt="Humpback whale tubercles informing wind turbine blade design"
           />
         </figure>
         <div className="ux-actions">
