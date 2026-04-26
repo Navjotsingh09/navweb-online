@@ -1,0 +1,88 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; fill: #1a1a1a; }
+      .label { font-size: 14px; fill: #333; }
+      .desc { font-size: 12px; fill: #666; }
+      .bird { fill: #0066CC; }
+      .train { fill: #333; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5f5f0"/>
+
+  <!-- Title -->
+  <text x="400" y="35" class="title" text-anchor="middle">Kingfisher Beak → Shinkansen Train Nose Design</text>
+
+  <!-- Left: Kingfisher -->
+  <text x="150" y="80" class="label" font-weight="bold">Kingfisher Diving</text>
+
+  <!-- Water -->
+  <rect x="50" y="100" width="200" height="250" fill="#87CEEB" opacity="0.6"/>
+
+  <!-- Kingfisher body -->
+  <ellipse cx="150" cy="150" rx="25" ry="35" class="bird"/>
+
+  <!-- Kingfisher beak (streamlined, pointed) -->
+  <polygon points="175,165 220,160 225,170 180,175" fill="#FF8C00"/>
+  <line x1="220" y1="165" x2="235" y2="170" stroke="#333" stroke-width="1"/>
+
+  <!-- Water splash around beak -->
+  <path d="M 210 150 Q 220 140 230 155 Q 220 165 210 160" fill="none" stroke="#87CEEB" stroke-width="1" opacity="0.5"/>
+
+  <!-- Ripples -->
+  <circle cx="150" cy="320" r="40" fill="none" stroke="#87CEEB" stroke-width="1" opacity="0.5"/>
+  <circle cx="150" cy="320" r="60" fill="none" stroke="#87CEEB" stroke-width="1" opacity="0.3"/>
+
+  <!-- Right: Shinkansen -->
+  <text x="620" y="80" class="label" font-weight="bold">Shinkansen Series 500</text>
+
+  <!-- Rail track -->
+  <line x1="500" y1="350" x2="800" y2="350" stroke="#666" stroke-width="3"/>
+  <line x1="500" y1="360" x2="800" y2="360" stroke="#666" stroke-width="3"/>
+
+  <!-- Train body -->
+  <rect x="530" y="250" width="220" height="80" class="train" rx="5"/>
+
+  <!-- Train nose (streamlined, pointed) -->
+  <polygon points="750,250 800,280 750,310" fill="#FF8C00"/>
+
+  <!-- Windows -->
+  <rect x="550" y="265" width="20" height="20" fill="#87CEEB"/>
+  <rect x="585" y="265" width="20" height="20" fill="#87CEEB"/>
+  <rect x="620" y="265" width="20" height="20" fill="#87CEEB"/>
+  <rect x="655" y="265" width="20" height="20" fill="#87CEEB"/>
+
+  <!-- Comparison section -->
+  <text x="400" y="430" class="label" font-weight="bold">Design Principle: Eliminate Boom on Water/Air Entry</text>
+
+  <!-- Left box: Natural -->
+  <g>
+    <rect x="100" y="460" width="250" height="110" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="225" y="485" class="label" text-anchor="middle" font-weight="bold">Kingfisher Beak</text>
+    <text x="115" y="510" class="desc">• Pointed, streamlined tip</text>
+    <text x="115" y="530" class="desc">• Minimal water displacement</text>
+    <text x="115" y="550" class="desc">• Silent, splashless entry</text>
+  </g>
+
+  <!-- Right box: Engineering -->
+  <g>
+    <rect x="450" y="460" width="250" height="110" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="575" y="485" class="label" text-anchor="middle" font-weight="bold">Train Nose Design</text>
+    <text x="465" y="510" class="desc">• Nose-cone shaped</text>
+    <text x="465" y="530" class="desc">• Smooth air displacement</text>
+    <text x="465" y="550" class="desc">• Eliminates tunnel boom</text>
+  </g>
+
+  <!-- Center connector -->
+  <path d="M 350 515 L 450 515" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="400" y="510" class="desc" text-anchor="middle" font-weight="bold">→ Inspired by</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,115 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; fill: #1a1a1a; }
+      .label { font-size: 14px; fill: #333; }
+      .desc { font-size: 12px; fill: #666; }
+      .gecko { fill: #8B7355; }
+      .setae { fill: #D2B48C; }
+      .wall { fill: #999; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5f5f0"/>
+
+  <!-- Title -->
+  <text x="400" y="35" class="title" text-anchor="middle">Gecko Feet: Van der Waals Adhesion Without Glue</text>
+
+  <!-- Left: Gecko foot hierarchical structure -->
+  <text x="120" y="90" class="label" font-weight="bold">Hierarchical Nanostructure</text>
+
+  <!-- Level 1: Toe -->
+  <g>
+    <circle cx="120" cy="150" r="25" class="gecko"/>
+    <text x="120" y="158" class="desc" text-anchor="middle" font-size="11">Toe</text>
+  </g>
+  <text x="120" y="190" class="desc" text-anchor="middle" font-size="10">~1 mm</text>
+
+  <!-- Level 2: Lamellae (ridges) -->
+  <g>
+    <rect x="90" y="220" width="60" height="30" fill="#fff" stroke="#999" stroke-width="1" rx="2"/>
+    <line x1="100" y1="220" x2="100" y2="250" stroke="#666" stroke-width="1"/>
+    <line x1="110" y1="220" x2="110" y2="250" stroke="#666" stroke-width="1"/>
+    <line x1="120" y1="220" x2="120" y2="250" stroke="#666" stroke-width="1"/>
+    <line x1="130" y1="220" x2="130" y2="250" stroke="#666" stroke-width="1"/>
+    <line x1="140" y1="220" x2="140" y2="250" stroke="#666" stroke-width="1"/>
+    <text x="120" y="280" class="desc" text-anchor="middle" font-size="10">Lamellae</text>
+    <text x="120" y="295" class="desc" text-anchor="middle" font-size="10">~200 micrometers</text>
+  </g>
+
+  <!-- Level 3: Setae (hairs) -->
+  <g>
+    <circle cx="85" cy="330" r="3" class="setae"/>
+    <circle cx="95" cy="330" r="3" class="setae"/>
+    <circle cx="105" cy="330" r="3" class="setae"/>
+    <circle cx="115" cy="330" r="3" class="setae"/>
+    <circle cx="125" cy="330" r="3" class="setae"/>
+    <circle cx="135" cy="330" r="3" class="setae"/>
+    <circle cx="145" cy="330" r="3" class="setae"/>
+    <circle cx="155" cy="330" r="3" class="setae"/>
+    <text x="120" y="360" class="desc" text-anchor="middle" font-size="10">Setae (hairs)</text>
+    <text x="120" y="375" class="desc" text-anchor="middle" font-size="10">~200 nanometers diameter</text>
+  </g>
+
+  <!-- Center: Climbing gecko on vertical wall -->
+  <text x="400" y="90" class="label" font-weight="bold">Climbing Mechanism</text>
+
+  <!-- Wall -->
+  <rect x="350" y="120" width="100" height="250" fill="#CCCCCC" opacity="0.6" stroke="#999" stroke-width="1"/>
+
+  <!-- Gecko on wall -->
+  <g>
+    <!-- Body -->
+    <ellipse cx="400" cy="180" rx="30" ry="40" class="gecko"/>
+    
+    <!-- Head -->
+    <circle cx="400" cy="140" r="15" class="gecko"/>
+    
+    <!-- Eye -->
+    <circle cx="407" cy="137" r="3" fill="black"/>
+    
+    <!-- Feet touching wall -->
+    <circle cx="385" cy="220" r="5" class="setae" opacity="0.8"/>
+    <circle cx="415" cy="220" r="5" class="setae" opacity="0.8"/>
+    <circle cx="385" cy="250" r="5" class="setae" opacity="0.8"/>
+    <circle cx="415" cy="250" r="5" class="setae" opacity="0.8"/>
+  </g>
+
+  <!-- Right: Van der Waals Force explanation -->
+  <text x="600" y="90" class="label" font-weight="bold">Van der Waals Forces</text>
+
+  <g>
+    <rect x="520" y="120" width="240" height="180" fill="#f0f8f4" stroke="#4a9e5c" stroke-width="2" rx="3"/>
+    <text x="640" y="145" class="label" text-anchor="middle" font-weight="bold">Nanoscale Adhesion</text>
+    
+    <text x="540" y="170" class="desc">• Each seta: ~200 nm</text>
+    <text x="540" y="190" class="desc">• Per gecko: ~2 million setae</text>
+    <text x="540" y="210" class="desc">• Each seta: ~100 nanoNewtons</text>
+    <text x="540" y="230" class="desc">• Total: can hold 100+ kg</text>
+    
+    <text x="540" y="260" class="desc" font-weight="bold">No glue, wet, reusable</text>
+  </g>
+
+  <!-- Applications -->
+  <text x="400" y="380" class="label" font-weight="bold">Biomimetic Applications</text>
+
+  <g>
+    <rect x="300" y="410" width="180" height="110" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="390" y="435" class="label" text-anchor="middle" font-weight="bold">Geckskin</text>
+    <text x="320" y="455" class="desc">Stanford invention</text>
+    <text x="320" y="475" class="desc">Synthetic adhesive</text>
+    <text x="320" y="495" class="desc">Reusable 1000+ times</text>
+  </g>
+
+  <g>
+    <rect x="520" y="410" width="180" height="110" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="610" y="435" class="label" text-anchor="middle" font-weight="bold">Medical/Surgical</text>
+    <text x="540" y="455" class="desc">MIT surgical tape</text>
+    <text x="540" y="475" class="desc">Gecko Biomedical FDA</text>
+    <text x="540" y="495" class="desc">Approval 2021</text>
+  </g>
+
+  <text x="400" y="560" class="desc" text-anchor="middle">Scaling Challenge: Gecko feet work at small scale due to nanoscale forces</text>
+  <text x="400" y="580" class="desc" text-anchor="middle">Scaling up to human-sized applications requires engineering innovation</text>
+</svg>

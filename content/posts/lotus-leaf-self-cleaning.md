@@ -9,6 +9,8 @@ tags: [biomimicry, materials-science, hydrophobicity, coatings, nanotechnology]
 
 In traditional Chinese art, the lotus flower symbolizes purity — not merely because of its beauty, but because it emerges from mud utterly clean. In reality, the lotus achieves this through physics, not spirituality. Its leaves are covered with microscopic bumps coated in waxy nanoscale ridges that repel water so completely that a droplet perched on a lotus leaf sits in perfect spheres, rolling off at the slightest tilt [1]. As the water rolls, it sweeps away dust, bacteria, and pollution — a self-cleaning mechanism that requires no energy, no chemicals, and no effort [1]. In 1997, German scientists Wilhelm Barthlott and Christoph Neinhuis published this discovery, naming it the *lotus effect* [1]. Today, superhydrophobic coatings inspired by lotus leaf geometry are commercially deployed on skyscraper windows, building exteriors, automotive paint, and even textiles. A single lotus-inspired coating can keep a building facade clean for decades, reducing maintenance labor and chemical use [1]. The lotus leaf had solved a problem that human chemistry spent centuries trying to crack: how to make surfaces that clean themselves [1].
 
+![Lotus Leaf Dual-Scale Roughness](/images/lotus-leaf-roughness.svg)
+
 ## The Biological Inspiration: Self-Cleaning Through Nanoscale Architecture
 
 The lotus plant (*Nelumbo nucifera*) grows in muddy ponds and swamps across Asia [1]. Its leaves are constantly exposed to dust, pollen, soil, and microorganisms. Unlike plants that have evolved waxy coatings or fuzzy textures to shed water, the lotus developed something more sophisticated: a **dual-scale roughness** that combines microscopic bumps with nanoscale ridges [1].

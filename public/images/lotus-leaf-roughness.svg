@@ -1,0 +1,112 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; fill: #1a1a1a; }
+      .label { font-size: 14px; fill: #333; }
+      .desc { font-size: 12px; fill: #666; }
+      .leaf { fill: #228B22; }
+      .water { fill: #87CEEB; }
+      .nano { fill: #D4A574; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5f5f0"/>
+
+  <!-- Title -->
+  <text x="400" y="35" class="title" text-anchor="middle">Lotus Leaf: Dual-Scale Roughness Creates Self-Cleaning</text>
+
+  <!-- Left: Lotus leaf in water -->
+  <text x="120" y="90" class="label" font-weight="bold">Lotus Leaf Self-Cleaning</text>
+
+  <!-- Muddy water -->
+  <rect x="40" y="110" width="160" height="180" fill="#8B7355" opacity="0.3" stroke="#666" stroke-width="1"/>
+
+  <!-- Lotus leaf -->
+  <ellipse cx="120" cy="190" rx="45" ry="35" class="leaf"/>
+
+  <!-- Water droplet on leaf -->
+  <circle cx="120" cy="155" r="15" class="water" opacity="0.8"/>
+  <text x="120" y="162" font-size="10" text-anchor="middle">H₂O</text>
+
+  <!-- Particles rolling away -->
+  <circle cx="100" cy="205" r="4" fill="#666" opacity="0.6"/>
+  <circle cx="85" cy="210" r="4" fill="#666" opacity="0.5"/>
+  <circle cx="70" cy="212" r="3" fill="#666" opacity="0.4"/>
+
+  <!-- Center: Hierarchical structure -->
+  <text x="400" y="90" class="label" font-weight="bold">Dual-Scale Roughness</text>
+
+  <!-- Microbumps (10-20 micrometers) -->
+  <g>
+    <rect x="300" y="140" width="200" height="60" fill="#fff" stroke="#999" stroke-width="1" rx="2"/>
+    <polygon points="320,200 330,160 340,200" class="leaf"/>
+    <polygon points="360,200 370,160 380,200" class="leaf"/>
+    <polygon points="400,200 410,160 420,200" class="leaf"/>
+    <polygon points="440,200 450,160 460,200" class="leaf"/>
+    <polygon points="480,200 490,160 500,200" class="leaf"/>
+    
+    <text x="400" y="230" class="label" text-anchor="middle">Microbumps</text>
+    <text x="400" y="248" class="desc" text-anchor="middle">10-20 micrometers tall</text>
+  </g>
+
+  <!-- Nanofolds (100-200 nanometers) -->
+  <g>
+    <rect x="300" y="280" width="200" height="60" fill="#fff" stroke="#999" stroke-width="1" rx="2"/>
+    <line x1="320" y1="280" x2="320" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="330" y1="280" x2="330" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="340" y1="280" x2="340" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="350" y1="280" x2="350" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="360" y1="280" x2="360" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="370" y1="280" x2="370" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="380" y1="280" x2="380" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="390" y1="280" x2="390" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="400" y1="280" x2="400" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="410" y1="280" x2="410" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="420" y1="280" x2="420" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="430" y1="280" x2="430" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="440" y1="280" x2="440" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="450" y1="280" x2="450" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="460" y1="280" x2="460" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="470" y1="280" x2="470" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="480" y1="280" x2="480" y2="340" stroke="#D4A574" stroke-width="1"/>
+    <line x1="490" y1="280" x2="490" y2="340" stroke="#D4A574" stroke-width="1"/>
+    
+    <text x="400" y="370" class="label" text-anchor="middle">Nanofolds</text>
+    <text x="400" y="388" class="desc" text-anchor="middle">100-200 nanometers tall</text>
+  </g>
+
+  <!-- Right: Superhydrophobicity mechanism -->
+  <text x="680" y="90" class="label" font-weight="bold">Superhydrophobicity</text>
+
+  <g>
+    <rect x="600" y="120" width="180" height="180" fill="#f0f8f4" stroke="#4a9e5c" stroke-width="2" rx="3"/>
+    <text x="690" y="145" class="label" text-anchor="middle" font-weight="bold">Contact Angle</text>
+    
+    <text x="610" y="170" class="desc" font-weight="bold">Regular surface:</text>
+    <text x="610" y="190" class="desc">&lt;90° (wets)</text>
+    
+    <text x="610" y="220" class="desc" font-weight="bold">Lotus leaf:</text>
+    <text x="610" y="240" class="desc">&gt;150° (rolls off)</text>
+    
+    <text x="610" y="270" class="desc" font-weight="bold">Result: Self-cleaning</text>
+  </g>
+
+  <!-- Applications at bottom -->
+  <g>
+    <rect x="40" y="430" width="720" height="130" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="400" y="455" class="label" text-anchor="middle" font-weight="bold">Commercial Applications</text>
+    
+    <text x="70" y="485" class="desc" font-weight="bold">Building Coatings:</text>
+    <text x="70" y="505" class="desc">Sto Lotusan paint: facade stays</text>
+    <text x="70" y="525" class="desc">clean 10+ years, -60% maintenance</text>
+
+    <text x="300" y="485" class="desc" font-weight="bold">Solar Panels:</text>
+    <text x="300" y="505" class="desc">+8-12% efficiency gain from</text>
+    <text x="300" y="525" class="desc">reduced dust accumulation</text>
+
+    <text x="530" y="485" class="desc" font-weight="bold">Textiles &amp; Glass:</text>
+    <text x="530" y="505" class="desc">Pilkington Activ, outdoor</text>
+    <text x="530" y="525" class="desc">clothing, marine coatings</text>
+  </g>
+</svg>
