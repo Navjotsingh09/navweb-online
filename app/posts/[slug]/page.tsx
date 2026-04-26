@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
-import { getPost, listPostSlugs } from "@/lib/posts";
+import Link from "next/link";
+import { getPost, listPostSlugs, listPosts } from "@/lib/posts";
 import { resolveUnsplashImages } from "@/lib/unsplash";
 import type { AgentImage } from "@/lib/unsplash";
 import Comments from "@/components/Comments";
+import { findRelatedPosts, getReadingTime } from "@/lib/post-utils";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -78,37 +80,85 @@ export default async function PostPage({
     } catch {
       // sidecar malformed — skip hero image
     }
-  }
+  const allPosts = listPosts();
+  const relatedPosts = findRelatedPosts(slug, allPosts, post.tags, 3);
 
   return (
     <div className="container">
-    <article className="post">
-      <header>
-        <h1>{post.title}</h1>
-        {post.date && <time dateTime={post.date}>{post.date}</time>}
-        {post.tags.length > 0 && (
-          <ul className="tags">
-            {post.tags.map((t) => (
-              <li key={t}>#{t}</li>
-            ))}
-          </ul>
+      <article className="post">
+        <header>
+          <h1>{post.title}</h1>
+          <div className="post-header-meta">
+            {post.date && (
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            )}
+            {post.date && <span className="meta-divider">·</span>}
+            <span className="post-reading-time">{getReadingTime(post.raw)} min read</span>
+          </div>
+          {post.tags.length > 0 && (
+            <ul className="tags">
+              {post.tags.map((t) => (
+                <li key={t}>#{t}</li>
+              ))}
+            </ul>
+          )}
+        </header>
+        {heroImage && (
+          <figure className="hero-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={heroImage.url} alt={heroImage.credit} />
+            <figcaption>
+              <a href={heroImage.credit_url} target="_blank" rel="noopener noreferrer">
+                {heroImage.credit}
+              </a>
+            </figcaption>
+          </figure>
         )}
-      </header>
-      {heroImage && (
-        <figure className="hero-image">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={heroImage.url} alt={heroImage.credit} />
-          <figcaption>
-            <a href={heroImage.credit_url} target="_blank" rel="noopener noreferrer">
-              {heroImage.credit}
-            </a>
-          </figcaption>
-        </figure>
+        <div
+          className="prose"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <Comments postSlug={slug} />
+      </article>
+
+      {/* ── Related posts ── */}
+      {relatedPosts.length > 0 && (
+        <section className="related-posts">
+          <h2>Related essays</h2>
+          <div className="related-posts-grid">
+            {relatedPosts.map((relPost) => (
+              <article key={relPost.slug} className="related-post-card">
+                <Link href={`/posts/${relPost.slug}`}>
+                  <h3>{relPost.title}</h3>
+                </Link>
+                <div className="related-post-meta">
+                  {relPost.date && (
+                    <time dateTime={relPost.date}>
+                      {new Date(relPost.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </time>
+                  )}
+                  {relPost.date && <span className="meta-divider">·</span>}
+                  <span>{getReadingTime(relPost.excerpt || '')} min</span>
+                </div>
+                {relPost.excerpt && <p>{relPost.excerpt}…</p>}
+                <Link href={`/posts/${relPost.slug}`} className="related-read-link">
+                  Read →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
       )}
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
       <Comments postSlug={slug} />
     </article>
     </div>
