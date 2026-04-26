@@ -44,11 +44,11 @@ export default function RootLayout({
             Nav Web Online
           </a>
           <nav>
-            <a href="/">Posts</a>
+            <a href="/">Home</a>
           </nav>
         </header>
         <Analytics />
-        <main className="container">{children}</main>
+        <main>{children}</main>
         <footer className="site-footer">
           <p>© {new Date().getFullYear()} Nav Web Online · Biomimicry & Innovation</p>
         </footer>

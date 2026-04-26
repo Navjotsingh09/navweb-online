@@ -81,6 +81,7 @@ export default async function PostPage({
   }
 
   return (
+    <div className="container">
     <article className="post">
       <header>
         <h1>{post.title}</h1>
@@ -110,5 +111,6 @@ export default async function PostPage({
       />
       <Comments postSlug={slug} />
     </article>
+    </div>
   );
 }
