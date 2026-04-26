@@ -6,12 +6,12 @@ type Step = 0 | 1 | 2 | 3;
 
 const PROJECT_TYPES = [
   "Editorial / writing",
+  "AI-assisted editorial / writing",
   "Web development",
   "Mobile app development",
   "Figma designs",
   "AI-assisted fast code",
   "Research",
-  "Speaking / workshop",
   "Other",
 ];
 
@@ -172,7 +172,10 @@ export function CollaborateForm() {
                     className={`collab-chip ${
                       data.projectType === opt ? "is-active" : ""
                     }`}
-                    onClick={() => update({ projectType: opt })}
+                    onClick={() => {
+                      update({ projectType: opt });
+                      setTimeout(() => setStep(1), 220);
+                    }}
                   >
                     {opt}
                   </button>
@@ -299,6 +302,13 @@ export function CollaborateForm() {
               >
                 ← Back
               </button>
+            )}
+            {!stepValid && step < 2 && (
+              <span className="collab-hint" aria-live="polite">
+                {step === 0
+                  ? "Pick a project type to continue"
+                  : "Pick a budget and timeline to continue"}
+              </span>
             )}
             {step < 2 ? (
               <button

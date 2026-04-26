@@ -2780,6 +2780,13 @@ a {
 
 .collab-btn-ghost:hover { color: #0b1320; }
 
+.collab-hint {
+  margin-right: auto;
+  font: 400 0.78rem/1.3 "Barlow", sans-serif;
+  color: #76838f;
+  font-style: italic;
+}
+
 .collab-error {
   margin: 0;
   padding: 12px 14px;
