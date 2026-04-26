@@ -60,11 +60,11 @@ A monoculture forest collapses when one pathogen arrives. A diverse one absorbs 
 
 | Product | Borrowed mechanism | Outcome |
 |---|---|---|
-| **Google Maps** | Ecosystem branching (tree roots, river deltas) | Intuitive zoom/explore at every level of detail |
-| **Waze** | Ant pheromone trails + swarm intelligence | Predictive routing that learns from collective behaviour |
-| **Spotify** | Fractal branching | Nested, self-similar menu hierarchy |
-| **iOS haptics** | Animal tactile feedback systems | Subtle vibrations that feel natural, not jarring |
-| **Figma snap-to-grid** | Velcro (burdock seeds) | Magnetic alignment that feels frictionless |
+| **[Google Maps](/posts/google-maps-ecosystem-branching)** | Ecosystem branching (tree roots, river deltas) | Intuitive zoom/explore at every level of detail |
+| **[Waze](/posts/waze-ant-pheromone-routing)** | Ant pheromone trails + swarm intelligence | Predictive routing that learns from collective behaviour |
+| **[Spotify](/posts/spotify-fractal-branching)** | Fractal branching | Nested, self-similar menu hierarchy |
+| **[iOS haptics](/posts/ios-haptics-animal-tactile)** | Animal tactile feedback systems | Subtle vibrations that feel natural, not jarring |
+| **[Figma snap-to-grid](/posts/figma-velcro-snap-to-grid)** | Velcro (burdock seeds) | Magnetic alignment that feels frictionless |
 | **Pinterest masonry layout** | Honeycomb tessellation | Maximum content density with minimum visual noise |
 | **Slack notification batching** | Predator/prey alertness rhythms | Reduces cognitive load by clustering low-priority events |
 
