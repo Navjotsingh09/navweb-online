@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
       .orderBy("createdAt", "desc")
       .get();
 
-    const comments = snap.docs.map((doc) => {
+    const comments = snap.docs.map((doc: any) => {
       const d = doc.data();
       return {
         id: doc.id,
