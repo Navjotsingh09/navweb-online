@@ -82,6 +82,10 @@ Today, surgeons are beginning to replace sutures with mussel-inspired glue in sp
 
 Medicine is learning that sometimes the answer to a modern problem is written in nature, waiting to be read and translated [1]. The mussel teaches that complexity isn't always an obstacle; sometimes it's a solution [1].
 
+## Watch on YouTube
+
+- [Mussel-Inspired Surgical Glue and Wet Adhesives (YouTube)](https://www.youtube.com/results?search_query=mussel+inspired+surgical+glue+wet+adhesives)
+
 ## Sources
 
 [1] Messersmith, P. B., & Waite, J. H. (1987). "The Nature of Cross-linking in Bivalve Adhesive Proteins." *Tetrahedron Letters*, 28(48), 5791–5794. — Foundational research on mussel adhesive chemistry and DOPA cross-linking.

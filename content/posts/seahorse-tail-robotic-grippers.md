@@ -76,6 +76,10 @@ The seahorse's tail is a lesson in constraint and elegance. Slow, with limited m
 
 Robots building the future—surgical assistants, rescuers in rubble, assembly lines in factories—are increasingly learning from that principle. Rigidity and force are not always the answer. Sometimes, the strongest grip is the one that bends.
 
+## Watch on YouTube
+
+- [Seahorse Tail Mechanics and Soft Robotic Grippers (YouTube)](https://www.youtube.com/results?search_query=seahorse+tail+mechanics+soft+robotic+grippers)
+
 ## Sources
 
 [1] Callan D. Bentley et al. (2021). "Mechanical properties and structure of the seahorse tail." *Journal of the Royal Society Interface*, 18(179), 20210296.

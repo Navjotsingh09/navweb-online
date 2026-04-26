@@ -57,6 +57,10 @@ This reframing freed the team to see possibilities they'd been overlooking. The 
 
 Today, millions of passengers on bullet trains around the world benefit from the kingfisher's engineering wisdom every day, usually without knowing it. The bird's beak has become part of the infrastructure of human speed. This is what biomimicry means at scale: not a gimmick or a marketing angle, but a fundamental shift in how we approach problems — by recognizing that our challenges are often not new, and that evolution has been solving them for eons [1].
 
+## Watch on YouTube
+
+- [Kingfisher-Inspired Shinkansen Nose Design (YouTube)](https://www.youtube.com/results?search_query=kingfisher+inspired+shinkansen+nose+design)
+
 ## Sources
 
 [1] Nakatsu, E. (1997). "The Evolution of a Bird-Inspired Aerodynamic Design: The Japanese Shinkansen Series 500." *Railway Technical Review*, 54(3), 12–19. — Nakatsu's own account of the kingfisher-to-train design process and philosophy.

@@ -78,6 +78,10 @@ Today, lotus-inspired coatings are embedded in the infrastructure of modern citi
 
 The lotus demonstrates a principle that recurs throughout biomimicry: sometimes nature's most powerful solutions are invisible. The lotus leaf doesn't attract attention with drama or complexity. It simply cleans itself, so quietly that it took human civilization thousands of years to notice. Now that we have, we're finding the principle everywhere — on buildings, on solar panels, on catheters. Each application whispers the same lesson: study nature's constraints, extract its principles, and the problems that seemed hard become simple [1].
 
+## Watch on YouTube
+
+- [Lotus Effect and Self-Cleaning Surfaces (YouTube)](https://www.youtube.com/results?search_query=lotus+effect+self+cleaning+surfaces)
+
 ## Sources
 
 [1] Barthlott, W., & Neinhuis, C. (1997). "Purity of the Sacred Lotus, or Escape from Contamination in Biological Surfaces." *Planta*, 202(1), 1–8. — Foundational discovery of lotus superhydrophobicity and self-cleaning mechanism.

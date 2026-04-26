@@ -67,6 +67,10 @@ This is not unique to shark skin. Many biomimetic innovations have failed in the
 
 The shark spent 11 million years engineering its skin. We rejected it from sport, then spent 20 years rediscovering its value in aviation. The real lesson is that when we dismiss a natural solution as impractical, we might simply be asking it the wrong question. The shark's skin was never about Olympic glory. It was about moving through water with grace and efficiency — a principle that scales beautifully to aircraft, ships, and turbines. The shark is still teaching, even after we ban it from the pool.
 
+## Watch on YouTube
+
+- [Shark Skin Riblets and Drag Reduction (YouTube)](https://www.youtube.com/results?search_query=shark+skin+riblets+drag+reduction)
+
 ## Sources
 
 [1] Doyle, F., & Hart, C. (2008). "Biomimetic Riblet Technology in Competitive Swimming: The Speedo Fastskin LZR Racer." *Sports Engineering*, 11(2), 97–112. — The original Speedo suit research and shark-skin principles.

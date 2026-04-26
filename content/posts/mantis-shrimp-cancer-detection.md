@@ -68,6 +68,10 @@ By reading the mantis shrimp's architecture and translating it into imaging tech
 
 This is biomimicry at its most profound: not just copying a design, but recognizing that nature has been solving a problem and asking if we can learn its method [1].
 
+## Watch on YouTube
+
+- [Mantis Shrimp Vision and Polarization Imaging (YouTube)](https://www.youtube.com/results?search_query=mantis+shrimp+vision+polarization+imaging+cancer+detection)
+
 ## Sources
 
 [1] Marshall, J., & Oberwinkler, J. (1999). "The Colourful World of the Mantis Shrimp." *Nature*, 401(6756), 873–874. — Overview of mantis shrimp visual system complexity and evolution.

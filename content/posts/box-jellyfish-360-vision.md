@@ -81,6 +81,10 @@ Self-driving cars are beginning to adopt this wisdom. Each sensor, each LiDAR, e
 
 The jellyfish is teaching robotics a lesson that runs counter to the history of computing: sometimes you don't want one smart brain; you want many capable sensors and distributed intelligence. The technology is not there yet — autonomous vehicles are still nascent — but the principle is clear. We are learning to see like a jellyfish: with multiple eyes, distributed processing, and no single point of failure [1].
 
+## Watch on YouTube
+
+- [Box Jellyfish Vision and Bio-Inspired Sensors (YouTube)](https://www.youtube.com/results?search_query=box+jellyfish+vision+bio-inspired+sensors)
+
 ## Sources
 
 [1] Marshall, J., & Land, M. F. (1993). "Movement and Vision in the Jellyfish *Chironex fleckeri*." *Philosophical Transactions of the Royal Society B*, 342(1302), 255–266. — Comprehensive study of jellyfish visual system and distributed neural processing.

@@ -75,6 +75,10 @@ The firefly's abdomen is an engineering marvel that evolution perfected long bef
 
 Every firefly winking in the dark is a reminder: nature's solutions often differ fundamentally from ours, and therein lies the insight. Sometimes the best engineering looks nothing like what we expected.
 
+## Watch on YouTube
+
+- [Firefly Bioluminescence and LED Efficiency (YouTube)](https://www.youtube.com/results?search_query=firefly+bioluminescence+LED+efficiency)
+
 ## Sources
 
 [1] Y. Kaskova et al. (2016). "Advances in bioluminescence imaging." *Nature Methods*, 13(8), 639–650.

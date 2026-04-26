@@ -67,6 +67,10 @@ Butterfly wings are a masterclass in substrate-independent computation. A Morpho
 
 The path from morpho iridescence to the next generation of displays isn't a direct line; it involves detours through photonics, materials science, and manufacturing innovation. But each step proves the same lesson: nature's three-billion-year research program has already solved problems we're just beginning to pose. Sometimes, the answer to "how do we display information efficiently?" is hiding in a butterfly's wing.
 
+## Watch on YouTube
+
+- [Butterfly Wing Structural Color and Photonics (YouTube)](https://www.youtube.com/results?search_query=butterfly+wing+structural+color+photonics)
+
 ## Sources
 
 [1] Mathieu Hébert et al. (2023). "Structural-Color Reflectance Displays: From Theory to Application." *Nature Photonics*, 17(4), 289–298.

@@ -70,6 +70,10 @@ Today, the gecko's architecture is being deployed in robotics that will explore 
 
 The gecko's quiet revolution is still accelerating. As manufacturing costs fall and durability improves, gecko-inspired adhesion may become as ubiquitous as glue. The difference is that when it's done with us, it leaves no trace — exactly as the gecko intended.
 
+## Watch on YouTube
+
+- [Gecko Adhesion and Dry Adhesive Technology (YouTube)](https://www.youtube.com/results?search_query=gecko+adhesion+dry+adhesive+technology)
+
 ## Sources
 
 [1] Autumn, K., et al. (2000). "Evidence for van der Waals Adhesion in Gecko Setae." *Proceedings of the National Academy of Sciences*, 97(24), 13438–13443. — The foundational research identifying van der Waals forces as gecko adhesion mechanism.

@@ -72,6 +72,10 @@ The spider teaches a radical lesson about materials: sometimes the strongest, mo
 
 As manufacturing scales and costs fall, synthetic spider silk may become as common as steel or plastic. When that day comes, it will be because we finally understood what the spider had always known: that engineering starts with respecting the rules of chemistry and biology, not fighting them [1].
 
+## Watch on YouTube
+
+- [Spider Silk Biomaterials and Bioengineering (YouTube)](https://www.youtube.com/results?search_query=spider+silk+biomaterials+bioengineering)
+
 ## Sources
 
 [1] Hayashi, C. Y., et al. (1999). "Spider Dragline Silk: Properties and Structure of a Protein Polymer." *Journal of Molecular Biology*, 295(5), 1205–1210. — Foundational research on spider silk molecular structure and properties.

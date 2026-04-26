@@ -77,6 +77,10 @@ Termites built the first smart buildings not through electronics or AI, but thro
 
 We are only beginning to understand what insects have known for millions of years: that elegance lies not in mechanical force but in working with fundamental principles of thermodynamics and fluid flow [1]. The termite teaches that sometimes the most sophisticated engineering is the simplest — air and stone, arranged properly, can do the work of electricity [1].
 
+## Watch on YouTube
+
+- [Termite Mound Ventilation and Passive Cooling Buildings (YouTube)](https://www.youtube.com/results?search_query=termite+mound+ventilation+passive+cooling+buildings)
+
 ## Sources
 
 [1] Pearce, M. (1997). "Biomimicry in Architecture: The Eastgate Centre." *Journal of Architectural Research*, 5(2), 112–128. — Architect Mick Pearce's account of the termite-mound-inspired design process.

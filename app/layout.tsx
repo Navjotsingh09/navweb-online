@@ -59,10 +59,10 @@ export default function RootLayout({
             <nav className="floating-nav-pill liquid-glass" aria-label="Primary">
               <Link className="floating-nav-link" href="/">Home</Link>
               <Link className="floating-nav-link" href="/posts">Essays</Link>
-              <Link className="floating-nav-link" href="/#signals">Signals</Link>
-              <Link className="floating-nav-link" href="/#notebook">Notebook</Link>
+              <Link className="floating-nav-link" href="/topics">Topics</Link>
+              <Link className="floating-nav-link" href="/collaborate">Collaborate</Link>
               <Link className="floating-nav-link" href="/#about">About</Link>
-              <Link className="floating-nav-cta" href="/posts">
+              <Link className="floating-nav-cta" href="/collaborate">
                 <span>Get the latest</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M7 17 17 7" />
@@ -71,7 +71,7 @@ export default function RootLayout({
               </Link>
             </nav>
 
-            <Link className="floating-nav-cta floating-nav-cta-mobile" href="/posts" aria-label="Get the latest">
+            <Link className="floating-nav-cta floating-nav-cta-mobile" href="/collaborate" aria-label="Get the latest">
               <span>Get the latest</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M7 17 17 7" />

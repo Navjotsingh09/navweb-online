@@ -71,6 +71,10 @@ The fact that tubercles work on turbine blades is not coincidence. It's because 
 
 Today, every humpback-inspired turbine blade spinning in a wind farm is a collaboration between evolution and engineering. The whale does the biological research. We do the synthesis and scaling. The result: cleaner energy, more efficient renewable infrastructure, and a reminder that sometimes the best engineering solutions come with whale songs attached [1].
 
+## Watch on YouTube
+
+- [Humpback Whale Tubercles and Wind Turbine Blades (YouTube)](https://www.youtube.com/results?search_query=humpback+whale+tubercles+wind+turbine+blades)
+
 ## Sources
 
 [1] Fish, F. E. (2005). "Hydrofoil Performance of Humpback Whale Pectoral Fins." *Applied Physics Letters*, 86(8), 081902. — The foundational research demonstrating tubercle hydrodynamics.
