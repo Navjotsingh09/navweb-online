@@ -65,6 +65,7 @@ export function listPosts(): PostMeta[] {
       const cover = extractFirstImage(content);
       const contentWithoutLeadImage = stripFirstImage(content);
       const excerpt = contentWithoutLeadImage
+        .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
         .replace(/^#.*$/gm, "")
         .trim()
         .split(/\n\s*\n/)[0]

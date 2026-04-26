@@ -1728,6 +1728,8 @@ a {
   color: #596572;
   font-size: 0.9rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .card-read-link,
