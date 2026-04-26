@@ -7,6 +7,7 @@ tags: [biomimicry, ux, design-tools, web, figma, design-patterns]
 
 # Figma's Snap-to-Grid Borrowed Its Magic from Burdock Seeds and Velcro
 
+![Figma logo](https://cdn.simpleicons.org/figma)
 
 The first time you align two rectangles in Figma, the canvas does something subtle that no other design tool got right for twenty years: as your shape gets close to an edge or a midpoint, **it pulls**. Not a snap on a fixed grid — a *gravitational* pull toward whatever alignment guide is most relevant *right now*. Release the mouse, and it locks. The whole interaction takes less than a second and feels like a magnet finding metal. The reference design isn't from another software product. It's from a **seed**.
 

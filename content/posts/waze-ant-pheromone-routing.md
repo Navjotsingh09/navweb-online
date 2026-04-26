@@ -7,6 +7,7 @@ tags: [biomimicry, ux, navigation, mobile, swarm-intelligence, design-patterns]
 
 # Waze, Ant Pheromones, and the Quiet Genius of Swarm Routing
 
+![Waze logo](https://cdn.simpleicons.org/waze)
 
 Waze knows you'll leave for work at 8:42 because for the last six Tuesdays, you have. It also knows that 4,300 other commuters on the same corridor have been re-routing around an accident on the M25 since 8:11. So at 8:27, before you've even reached for your phone, it pings: *leave now, take the A12*. There is no central planner deciding that for you. The decision is **emerging from the trail**.
 

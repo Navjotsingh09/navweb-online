@@ -7,6 +7,7 @@ tags: [biomimicry, ux, navigation, web, design-patterns, google]
 
 # How Google Maps Borrowed the Logic of River Deltas and Tree Roots
 
+![Google Maps logo](https://cdn.simpleicons.org/googlemaps)
 
 When you pinch-zoom on Google Maps, the world doesn't *change*. It **densifies**. Roads thicken into named boulevards; named boulevards reveal cycle lanes; cycle lanes reveal a coffee shop. Nothing about the visual logic resets between zoom levels — the same hierarchy you used to find your country gets you to a doorway. That is not a coincidence. It's the **branching geometry of natural systems**, applied to information architecture.
 

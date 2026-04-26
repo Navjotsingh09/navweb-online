@@ -7,6 +7,7 @@ tags: [biomimicry, ux, audio, mobile, fractals, design-patterns]
 
 # Spotify's Fractal Menu — Why You Never Get Lost in 100 Million Songs
 
+![Spotify logo](https://cdn.simpleicons.org/spotify)
 
 Spotify holds roughly **100 million tracks**, organised into 11 million playlists, themselves organised into genres, moods, decades, contexts, and editorial collections. By every reasonable engineering metric, this should be impossible to navigate. And yet a five-year-old can find *Baby Shark* in three taps. The reason isn't search. It's **fractal hierarchy** — the same visual logic, repeated at every depth.
 
