@@ -94,6 +94,12 @@ export default function HomePage() {
       <section className="home-journal" id="posts">
         {featured && (
           <article className="home-featured-story">
+            {featured.coverImage && (
+              <div className="home-featured-media">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={featured.coverImage} alt={featured.coverAlt || featured.title} />
+              </div>
+            )}
             <p className="story-label">Lead essay</p>
             <Link href={`/posts/${featured.slug}`} className="lead-story-link">
               <h2>{featured.title}</h2>
@@ -116,6 +122,12 @@ export default function HomePage() {
             <article key={post.slug} className="home-story-card">
               <span className="home-story-index">0{index + 1}</span>
               <div>
+                {post.coverImage && (
+                  <div className="home-story-thumb">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.coverImage} alt={post.coverAlt || post.title} />
+                  </div>
+                )}
                 <Link href={`/posts/${post.slug}`} className="secondary-story-link">
                   <h3>{post.title}</h3>
                 </Link>
@@ -144,7 +156,15 @@ export default function HomePage() {
           {archive.map((post) => (
             <article key={post.slug} className="home-archive-entry">
               <time dateTime={post.date}>{formatDate(post.date)}</time>
-              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+              <div className="home-archive-entry-body">
+                {post.coverImage && (
+                  <div className="home-archive-thumb">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.coverImage} alt={post.coverAlt || post.title} />
+                  </div>
+                )}
+                <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+              </div>
             </article>
           ))}
         </div>

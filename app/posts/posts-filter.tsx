@@ -89,6 +89,12 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
           <section className="posts-journal-grid">
             {featuredPost && (
               <article className="lead-story">
+                {featuredPost.coverImage && (
+                  <div className="lead-story-media">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={featuredPost.coverImage} alt={featuredPost.coverAlt || featuredPost.title} />
+                  </div>
+                )}
                 <p className="story-label">Featured essay</p>
                 <Link href={`/posts/${featuredPost.slug}`} className="lead-story-link">
                   <h2>{featuredPost.title}</h2>
@@ -130,6 +136,12 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
               {secondaryPosts.map((post, index) => (
                 <article key={post.slug} className="secondary-story">
                   <p className="secondary-story-index">0{index + 1}</p>
+                  {post.coverImage && (
+                    <div className="secondary-story-thumb">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={post.coverImage} alt={post.coverAlt || post.title} />
+                    </div>
+                  )}
                   <Link href={`/posts/${post.slug}`} className="secondary-story-link">
                     <h3>{post.title}</h3>
                   </Link>
@@ -158,6 +170,12 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
                       <time dateTime={post.date}>{formatDate(post.date)}</time>
                     </div>
                     <div className="archive-entry-body">
+                      {post.coverImage && (
+                        <div className="archive-entry-thumb">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={post.coverImage} alt={post.coverAlt || post.title} />
+                        </div>
+                      )}
                       <Link href={`/posts/${post.slug}`} className="archive-entry-link">
                         <h3>{post.title}</h3>
                       </Link>

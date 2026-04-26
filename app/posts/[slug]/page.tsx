@@ -131,15 +131,17 @@ export default async function PostPage({
             {excerpt && <p className="post-dek">{excerpt}…</p>}
           </header>
 
-          {heroImage && (
+          {(heroImage || post.coverImage) && (
             <figure className="hero-image editorial-hero-image">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={heroImage.url} alt={post.title} />
-              <figcaption>
-                <a href={heroImage.credit_url} target="_blank" rel="noopener noreferrer">
-                  Image: {heroImage.credit}
-                </a>
-              </figcaption>
+              <img src={heroImage?.url || post.coverImage || ""} alt={post.coverAlt || post.title} />
+              {heroImage?.credit_url && heroImage.credit && (
+                <figcaption>
+                  <a href={heroImage.credit_url} target="_blank" rel="noopener noreferrer">
+                    Image: {heroImage.credit}
+                  </a>
+                </figcaption>
+              )}
             </figure>
           )}
 
