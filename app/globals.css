@@ -2304,11 +2304,171 @@ a {
 .floating-nav-cta svg { stroke: #04060a; }
 
 .floating-nav-cta-mobile { display: none; }
+.floating-nav-burger { display: none; }
 
 @media (max-width: 880px) {
   .floating-nav-pill { display: none; }
-  .floating-nav-cta-mobile { display: inline-flex; }
+  .floating-nav-cta-mobile { display: none; }
+  .floating-nav-burger { display: inline-flex; }
 }
+
+/* ──────────────────────────────────────────────
+   MOBILE MENU (burger + sheet)
+────────────────────────────────────────────── */
+.floating-nav-burger {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 19, 32, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.floating-nav-burger:hover { background: #fff; }
+.floating-nav-burger:active { transform: scale(0.96); }
+
+.floating-nav-burger-bar {
+  display: block;
+  width: 18px;
+  height: 1.6px;
+  background: #0b1320;
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+.floating-nav-burger-bar.is-open-1 { transform: translateY(6.6px) rotate(45deg); }
+.floating-nav-burger-bar.is-open-2 { opacity: 0; }
+.floating-nav-burger-bar.is-open-3 { transform: translateY(-6.6px) rotate(-45deg); }
+
+.mobile-menu-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  visibility: hidden;
+}
+.mobile-menu-sheet.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(4, 6, 10, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.32s ease;
+  cursor: pointer;
+}
+.mobile-menu-sheet.is-open .mobile-menu-backdrop { opacity: 1; }
+
+.mobile-menu-panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  left: 12px;
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  background: linear-gradient(180deg, #f7f5f0 0%, #efece4 100%);
+  color: #0b1320;
+  border-radius: 28px;
+  padding: 22px 22px 26px;
+  box-shadow: 0 24px 60px rgba(4, 6, 10, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transform: translateY(-12px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.34s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.28s ease;
+}
+.mobile-menu-sheet.is-open .mobile-menu-panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.mobile-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-menu-kicker {
+  font: 500 0.7rem/1 "Barlow", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7684;
+}
+.mobile-menu-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 19, 32, 0.12);
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0b1320;
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(11, 19, 32, 0.08);
+}
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px;
+  font: 400 1.6rem/1.1 "Instrument Serif", serif;
+  color: #0b1320;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(11, 19, 32, 0.08);
+  transition: padding 0.2s ease, color 0.2s ease;
+}
+.mobile-menu-link:hover { padding-left: 10px; color: #1f2a3a; }
+.mobile-menu-link svg { color: #6b7684; transition: transform 0.2s ease; }
+.mobile-menu-link:hover svg { transform: translateX(3px); color: #0b1320; }
+
+.mobile-menu-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: #0b1320;
+  color: #f7f5f0;
+  font: 500 0.95rem/1 "Barlow", sans-serif;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(11, 19, 32, 0.22);
+}
+
+.mobile-menu-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(11, 19, 32, 0.08);
+}
+.mobile-menu-foot a {
+  font: 400 0.88rem/1.2 "Barlow", sans-serif;
+  color: #4a5566;
+  text-decoration: none;
+}
+.mobile-menu-foot a:hover { color: #0b1320; }
 
 /* Navbar is in normal flow now; no extra top padding needed */
 .site-main { padding-top: 0; }

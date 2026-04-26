@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
+import { MobileMenu } from "./mobile-menu";
 import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
@@ -78,6 +79,8 @@ export default function RootLayout({
                 <path d="M7 7h10v10" />
               </svg>
             </Link>
+
+            <MobileMenu />
           </div>
         </header>
         <Analytics />
