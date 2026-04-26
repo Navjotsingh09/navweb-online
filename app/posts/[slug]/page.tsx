@@ -112,6 +112,19 @@ export default async function PostPage({
             <span className="post-sidebar-label">Reading time</span>
             <strong>{getReadingTime(post.raw)} min</strong>
           </div>
+          {post.youtubeUrl && (
+            <div className="post-sidebar-block">
+              <span className="post-sidebar-label">Video</span>
+              <a
+                href={post.youtubeUrl}
+                className="post-youtube-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Watch on YouTube
+              </a>
+            </div>
+          )}
           {post.tags.length > 0 && (
             <div className="post-sidebar-block">
               <span className="post-sidebar-label">Topics</span>

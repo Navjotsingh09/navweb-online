@@ -18,12 +18,22 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
   const secondaryPosts = filteredPosts.slice(1, 4);
   const archivePosts = filteredPosts.slice(4);
 
-  const formatDate = (date: string) =>
-    new Date(date).toLocaleDateString('en-US', {
+  const formatDate = (date: string) => {
+    const target = new Date(date);
+    const now = new Date();
+    const dayMs = 24 * 60 * 60 * 1000;
+    const diffDays = Math.floor((now.getTime() - target.getTime()) / dayMs);
+
+    if (diffDays <= 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+
+    return target.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
     });
+  };
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
@@ -89,12 +99,6 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
           <section className="posts-journal-grid">
             {featuredPost && (
               <article className="lead-story">
-                {featuredPost.coverImage && (
-                  <div className="lead-story-media">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={featuredPost.coverImage} alt={featuredPost.coverAlt || featuredPost.title} />
-                  </div>
-                )}
                 <p className="story-label">Featured essay</p>
                 <Link href={`/posts/${featuredPost.slug}`} className="lead-story-link">
                   <h2>{featuredPost.title}</h2>
@@ -105,7 +109,7 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
                   <span>{getReadingTime(featuredPost.excerpt || '')} min read</span>
                 </div>
                 {featuredPost.excerpt && (
-                  <p className="lead-story-excerpt">{featuredPost.excerpt}…</p>
+                  <p className="lead-story-excerpt">{featuredPost.excerpt}</p>
                 )}
                 {featuredPost.tags.length > 0 && (
                   <ul className="post-card-tags lead-story-tags">
@@ -126,22 +130,27 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
                     ))}
                   </ul>
                 )}
-                <Link href={`/posts/${featuredPost.slug}`} className="read-link lead-read-link">
-                  Read the full essay
-                </Link>
+                <div className="lead-story-actions">
+                  <Link href={`/posts/${featuredPost.slug}`} className="read-link lead-read-link">
+                    Read the full essay
+                  </Link>
+                  {featuredPost.youtubeUrl && (
+                    <a
+                      href={featuredPost.youtubeUrl}
+                      className="read-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Watch on YouTube
+                    </a>
+                  )}
+                </div>
               </article>
             )}
 
             <div className="secondary-stories">
-              {secondaryPosts.map((post, index) => (
+              {secondaryPosts.map((post) => (
                 <article key={post.slug} className="secondary-story">
-                  <p className="secondary-story-index">0{index + 1}</p>
-                  {post.coverImage && (
-                    <div className="secondary-story-thumb">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={post.coverImage} alt={post.coverAlt || post.title} />
-                    </div>
-                  )}
                   <Link href={`/posts/${post.slug}`} className="secondary-story-link">
                     <h3>{post.title}</h3>
                   </Link>
@@ -150,7 +159,20 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
                     <span className="post-divider">·</span>
                     <span>{getReadingTime(post.excerpt || '')} min read</span>
                   </div>
-                  {post.excerpt && <p className="post-card-excerpt">{post.excerpt}…</p>}
+                  {post.excerpt && <p className="post-card-excerpt">{post.excerpt}</p>}
+                  <div className="secondary-story-actions">
+                    <Link href={`/posts/${post.slug}`} className="read-link">Read essay →</Link>
+                    {post.youtubeUrl && (
+                      <a
+                        href={post.youtubeUrl}
+                        className="read-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        YouTube →
+                      </a>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
@@ -170,22 +192,26 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
                       <time dateTime={post.date}>{formatDate(post.date)}</time>
                     </div>
                     <div className="archive-entry-body">
-                      {post.coverImage && (
-                        <div className="archive-entry-thumb">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={post.coverImage} alt={post.coverAlt || post.title} />
-                        </div>
-                      )}
                       <Link href={`/posts/${post.slug}`} className="archive-entry-link">
                         <h3>{post.title}</h3>
                       </Link>
-                      {post.excerpt && <p>{post.excerpt}…</p>}
+                      {post.excerpt && <p>{post.excerpt}</p>}
                     </div>
                     <div className="archive-entry-meta">
                       <span>{getReadingTime(post.excerpt || '')} min</span>
                       <Link href={`/posts/${post.slug}`} className="read-link">
-                        Open
+                        Read essay →
                       </Link>
+                      {post.youtubeUrl && (
+                        <a
+                          href={post.youtubeUrl}
+                          className="read-link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          YouTube →
+                        </a>
+                      )}
                     </div>
                   </article>
                 ))}
