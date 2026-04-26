@@ -1,0 +1,146 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; fill: #1a1a1a; }
+      .label { font-size: 14px; fill: #333; }
+      .desc { font-size: 12px; fill: #666; }
+      .jellyfish { fill: #FF69B4; }
+      .eye { fill: #FFD700; }
+      .sensor { fill: #4A90E2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#B8E6E6"/>
+
+  <!-- Title -->
+  <text x="400" y="35" class="title" text-anchor="middle">Box Jellyfish: 24 Eyes, No Brain, Distributed Vision</text>
+
+  <!-- Jellyfish bell -->
+  <ellipse cx="150" cy="200" rx="70" ry="100" class="jellyfish" opacity="0.6"/>
+  <text x="150" y="210" class="label" text-anchor="middle" fill="white" font-weight="bold">Bell</text>
+
+  <!-- Eyes around jellyfish (24 eyes distributed) -->
+  <!-- Top eyes -->
+  <circle cx="110" cy="110" r="8" class="eye"/>
+  <circle cx="150" cy="90" r="8" class="eye"/>
+  <circle cx="190" cy="110" r="8" class="eye"/>
+
+  <!-- Right side eyes -->
+  <circle cx="220" cy="140" r="8" class="eye"/>
+  <circle cx="235" cy="180" r="8" class="eye"/>
+  <circle cx="230" cy="220" r="8" class="eye"/>
+  <circle cx="220" cy="260" r="8" class="eye"/>
+
+  <!-- Bottom eyes -->
+  <circle cx="190" cy="290" r="8" class="eye"/>
+  <circle cx="150" cy="310" r="8" class="eye"/>
+  <circle cx="110" cy="290" r="8" class="eye"/>
+
+  <!-- Left side eyes -->
+  <circle cx="80" cy="260" r="8" class="eye"/>
+  <circle cx="65" cy="220" r="8" class="eye"/>
+  <circle cx="70" cy="180" r="8" class="eye"/>
+  <circle cx="80" cy="140" r="8" class="eye"/>
+
+  <!-- Tentacles -->
+  <path d="M 120 300 Q 80 380 90 450" stroke="#FF69B4" stroke-width="8" fill="none" opacity="0.7"/>
+  <path d="M 150 310 Q 150 390 145 460" stroke="#FF69B4" stroke-width="8" fill="none" opacity="0.7"/>
+  <path d="M 180 300 Q 220 380 210 450" stroke="#FF69B4" stroke-width="8" fill="none" opacity="0.7"/>
+
+  <!-- Eye types box (left) -->
+  <text x="50" y="370" class="label" font-weight="bold">Eye Types:</text>
+
+  <g>
+    <rect x="40" y="390" width="180" height="150" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="130" y="410" class="label" text-anchor="middle" font-weight="bold">1. Pit Eyes</text>
+    <text x="50" y="430" class="desc">Simple light</text>
+    <text x="50" y="448" class="desc">detection</text>
+    <text x="50" y="475" class="label" text-anchor="middle" font-weight="bold">2. Slit Eyes</text>
+    <text x="50" y="495" class="desc">Directional info</text>
+    <text x="50" y="513" class="desc">High precision</text>
+  </g>
+
+  <!-- Central comparison: Jellyfish vs Autonomous Vehicle -->
+  <text x="400" y="100" class="label" font-weight="bold">Distributed Processing Architecture</text>
+
+  <!-- Jellyfish architecture -->
+  <g>
+    <rect x="300" y="130" width="200" height="180" fill="#fff" stroke="#999" stroke-width="2" rx="5"/>
+    <text x="400" y="155" class="label" text-anchor="middle" font-weight="bold">Jellyfish</text>
+    
+    <!-- Eyes feeding to local processors -->
+    <circle cx="330" cy="180" r="6" class="eye"/>
+    <circle cx="360" cy="180" r="6" class="eye"/>
+    <circle cx="390" cy="180" r="6" class="eye"/>
+    <circle cx="420" cy="180" r="6" class="eye"/>
+    <circle cx="450" cy="180" r="6" class="eye"/>
+    <circle cx="470" cy="180" r="6" class="eye"/>
+    
+    <text x="400" y="210" class="desc" text-anchor="middle">Local neural nets</text>
+    <text x="400" y="228" class="desc" text-anchor="middle">process each eye</text>
+    
+    <rect x="320" y="245" width="160" height="30" fill="#FFD700" opacity="0.3" rx="2"/>
+    <text x="400" y="265" class="desc" text-anchor="middle">Immediate local action</text>
+    
+    <text x="400" y="290" class="desc" text-anchor="middle" font-weight="bold">No central brain</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 550 220 L 600 220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Autonomous Vehicle architecture -->
+  <g>
+    <rect x="650" y="130" width="200" height="180" fill="#fff" stroke="#4a9e5c" stroke-width="2" rx="5"/>
+    <text x="750" y="155" class="label" text-anchor="middle" font-weight="bold">Bio-Inspired</text>
+    <text x="750" y="172" class="label" text-anchor="middle" font-weight="bold">Autonomous Vehicle</text>
+    
+    <!-- Sensors feeding to local processors -->
+    <circle cx="680" cy="195" r="6" class="sensor"/>
+    <circle cx="710" cy="195" r="6" class="sensor"/>
+    <circle cx="740" cy="195" r="6" class="sensor"/>
+    <circle cx="770" cy="195" r="6" class="sensor"/>
+    <circle cx="800" cy="195" r="6" class="sensor"/>
+    
+    <text x="750" y="225" class="desc" text-anchor="middle">Edge processors</text>
+    <text x="750" y="243" class="desc" text-anchor="middle">per sensor</text>
+    
+    <rect x="680" y="260" width="140" height="30" fill="#4A90E2" opacity="0.3" rx="2"/>
+    <text x="750" y="280" class="desc" text-anchor="middle">Rapid local response</text>
+    
+    <text x="750" y="305" class="desc" text-anchor="middle" font-weight="bold">20ms latency</text>
+  </g>
+
+  <!-- Benefits section -->
+  <text x="400" y="370" class="label" font-weight="bold">Distributed Architecture Benefits</text>
+
+  <g>
+    <rect x="300" y="390" width="200" height="130" fill="#f0f8f4" stroke="#4a9e5c" stroke-width="2" rx="3"/>
+    <text x="400" y="415" class="label" text-anchor="middle" font-weight="bold">Speed</text>
+    <text x="320" y="435" class="desc">20ms response</text>
+    <text x="320" y="453" class="desc">vs 200ms central</text>
+    
+    <text x="400" y="475" class="label" text-anchor="middle" font-weight="bold">Redundancy</text>
+    <text x="320" y="495" class="desc">Loss of single</text>
+    <text x="320" y="513" class="desc">sensor: 85% function</text>
+  </g>
+
+  <!-- Eye types on right -->
+  <g>
+    <rect x="540" y="390" width="150" height="130" fill="#fff" stroke="#999" stroke-width="1" rx="3"/>
+    <text x="615" y="415" class="label" text-anchor="middle" font-weight="bold">3. Lens Eyes</text>
+    <text x="550" y="435" class="desc">Complex cameras</text>
+    <text x="550" y="453" class="desc">Image formation</text>
+    
+    <text x="615" y="480" class="label" text-anchor="middle" font-weight="bold">4. Upper Lens</text>
+    <text x="550" y="500" class="desc">Above detection</text>
+    <text x="550" y="518" class="desc">specialized role</text>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

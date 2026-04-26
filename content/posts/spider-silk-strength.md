@@ -9,6 +9,8 @@ tags: [biomimicry, materials-science, textiles, military, sustainability]
 
 A spider's dragline silk — the thread it uses for web scaffolding and emergency rappelling — has a tensile strength of roughly 1 gigapascal [1]. Steel has a tensile strength of roughly 0.4 gigapascals. This means spider silk can bear more weight before breaking than an equivalent thickness of steel, yet it weighs less than one-sixth as much [1]. The silk is also elastic: it can be stretched up to 50% of its original length before permanent deformation, then snap back to shape [1]. More remarkably, it achieves this through a protein chain synthesized at ambient temperature and pressure, using only amino acids and water — chemistry that requires no mining, smelting, or toxic processing [1]. For nearly a century, engineers have tried to synthesize spider silk. For most of that time, they failed. Now, through a combination of genetic engineering and synthetic biology, companies are finally producing spider silk at scale, transforming it from an exotic curiosity into a material deployed in ballistic vests, automotive components, and biodegradable textiles [2]. The spider had solved the materials problem millions of years ago; we are only now learning its recipe [1].
 
+![Spider Silk Protein Structure](/images/spider-silk-structure.svg)
+
 ## The Biological Inspiration: Protein Folding at Molecular Scale
 
 The orb-weaver spider (*Araneus* genus) spins webs using six different types of silk, each optimized for a specific function [1]. The dragline silk — the radii that anchor the web to tree branches and the lifeline the spider uses to escape — combines maximum strength with toughness (the ability to absorb energy without snapping) [1].

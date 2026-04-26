@@ -21,6 +21,8 @@ The brilliance is in the geometry. The tunnels have specific widths, angles, and
 
 Different termite species have evolved different mound geometries optimized for their local climate [1]. Termites in hot, dry regions have more extensive lateral galleries to dissipate heat over a larger surface area. Termites in humid regions have taller central chimneys for more aggressive air circulation [1]. Each species' mound design is a solution to its specific environmental constraints [1].
 
+![Termite Mound Passive Ventilation](/images/termite-ventilation.svg)
+
 ## From Biology to Engineering: Mick Pearce's Translation
 
 In the 1980s, Mick Pearce, a Zimbabwean architect, was designing the Eastgate Centre shopping mall in Harare [1]. The challenge was cooling a large building in a hot climate with minimal electricity — a constraint that pushed him to think differently [1]. He began studying termite mounds and realized that the insect's ventilation principle could be adapted to human architecture [1].

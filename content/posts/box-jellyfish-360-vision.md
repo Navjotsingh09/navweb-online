@@ -26,6 +26,8 @@ The system is robust through redundancy. Loss of a single eye doesn't incapacita
 
 Selection pressure optimized this design over roughly 500 million years [1]. Jellyfish that could see threats from all directions survived predation. Those that could respond to prey faster ate more and reproduced more successfully [1]. The result: a distributed, redundant, fault-tolerant vision system that works without a centralized brain [1].
 
+![Box Jellyfish 360° Distributed Vision](/images/jellyfish-distributed-vision.svg)
+
 ## From Biology to Engineering: Harvard's Distributed Robotics
 
 In 2018, Professor Radhika Nagpal's lab at Harvard was studying biologically-inspired distributed systems — swarms of robots that coordinate without central control [2]. A team member noticed parallels between jellyfish vision and the challenges autonomous vehicles face: 360-degree awareness, redundancy, and fault tolerance [2].

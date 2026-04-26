@@ -27,6 +27,8 @@ Different mussel species have variations in DOPA content and other protein compo
 
 The mechanism is so different from conventional adhesives (which rely on evaporation, UV cure, or two-part reactions) that it was initially difficult for chemists to understand [1]. But once they grasped the DOPA cross-linking principle, the applications became obvious [1].
 
+![Mussel Adhesive Chemistry](/images/mussel-adhesive-chemistry.svg)
+
 ## From Biology to Engineering: MIT's Surgical Adhesive
 
 In the 1980s, Professor Phillip Messersmith at MIT began studying mussel adhesion as a materials problem [1]. He cultured mussels, extracted adhesive proteins, and analyzed their chemistry [1]. The key insight: DOPA's catechol groups were the adhesive mechanism [1].
