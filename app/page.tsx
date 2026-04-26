@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { listPosts } from "@/lib/posts";
+import { VideoFeature } from "./components/video-feature";
 
 const SIGNALS = [
   {
@@ -110,6 +111,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <VideoFeature
+        videoId="_KowHG5Wbgk"
+        title="Biomimicry: Hoax or Genius?"
+        channel="DamiLee"
+        channelHref="https://www.youtube.com/@DamiLeeArch"
+        duration="9 min"
+        kicker="Field viewing"
+        postHref="/posts/biomimicry-hoax-or-genius-damilee"
+        summary="Architect and YouTuber DamiLee asks the uncomfortable question every biomimicry essay should answer first \u2014 is most of what we call \u2018nature-inspired design\u2019 just moodboarding with extra steps? Her nine-minute critique separates surface mimicry (lotus-shaped towers, leaf-pattern facades) from load-bearing biomimicry that actually changes how a building performs. We agree with the diagnosis and push back on the conclusion: the failure isn\u2019t the method, it\u2019s the discipline."
+      />
 
       <section className="ux-hero ux-hero-secondary">
         <p className="ux-kicker">About this issue</p>
