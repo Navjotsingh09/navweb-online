@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 type Step = 0 | 1 | 2 | 3;
 
 const PROJECT_TYPES = [
-  "Editorial / writing",
   "AI-assisted editorial / writing",
   "Web development",
   "Mobile app development",
