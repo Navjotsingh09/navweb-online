@@ -80,6 +80,8 @@ export default async function PostPage({
     } catch {
       // sidecar malformed — skip hero image
     }
+  }
+
   const allPosts = listPosts();
   const relatedPosts = findRelatedPosts(slug, allPosts, post.tags, 3);
 
@@ -159,8 +161,6 @@ export default async function PostPage({
           </div>
         </section>
       )}
-      <Comments postSlug={slug} />
-    </article>
     </div>
   );
 }
