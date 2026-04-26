@@ -314,6 +314,14 @@ h2 { font-size: 1.35rem; margin: 0 0 0.25rem; }
 .prose pre { background: #1c1c1c; color: #f0ead6; padding: 16px; border-radius: 6px; overflow-x: auto; }
 .prose pre code { background: transparent; color: inherit; padding: 0; }
 .prose hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+.prose img,
+.editorial-prose img {
+  display: block;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  margin: 1.25rem auto 2rem;
+}
 
 /* Hero image */
 .hero-image { margin: 1.5rem 0 2rem; }
