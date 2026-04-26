@@ -50,21 +50,34 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <header className="site-header-wrap">
-          <div className="site-shell">
-            <header className="site-header">
-              <Link className="brand" href="/">
-                <span className="brand-mark">NW</span>
-                <span className="brand-copy">
-                  <strong>Nav Web Online</strong>
-                </span>
+        <header className="floating-nav-wrap" aria-label="Site header">
+          <div className="floating-nav">
+            <Link className="floating-nav-brand" href="/" aria-label="Nav Web Online — home">
+              <span className="floating-nav-brand-mark">NW</span>
+            </Link>
+
+            <nav className="floating-nav-pill liquid-glass" aria-label="Primary">
+              <Link className="floating-nav-link" href="/">Home</Link>
+              <Link className="floating-nav-link" href="/posts">Essays</Link>
+              <Link className="floating-nav-link" href="/#signals">Signals</Link>
+              <Link className="floating-nav-link" href="/#notebook">Notebook</Link>
+              <Link className="floating-nav-link" href="/#about">About</Link>
+              <Link className="floating-nav-cta" href="/posts">
+                <span>Get the latest</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </Link>
-              <nav className="site-nav" aria-label="Primary">
-                <Link href="/">Home</Link>
-                <Link href="/posts">Blog</Link>
-                <Link href="/#about">About</Link>
-              </nav>
-            </header>
+            </nav>
+
+            <Link className="floating-nav-cta floating-nav-cta-mobile" href="/posts" aria-label="Get the latest">
+              <span>Get the latest</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </Link>
           </div>
         </header>
         <Analytics />
