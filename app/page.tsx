@@ -52,30 +52,67 @@ export default function HomePage() {
 
   return (
     <div className="home-shell">
-      <section className="ux-hero" id="posts">
-        <p className="ux-kicker">Issue one</p>
-        <h1 className="ux-title">Built for readers who ship better systems by studying nature.</h1>
-        <p className="ux-intro">
-          Nav Web Online is an editorial archive on biomimicry: how beetles,
-          jellyfish, termites, butterflies, geckos, and whales quietly inform
-          buildings, materials, vehicles, medical devices, and interfaces.
-        </p>
-        <figure className="ux-hero-media" aria-label="Biomimicry hero illustration">
-          <img
-            src="/images/whale-tubercles.svg"
-            alt="Humpback whale tubercles informing wind turbine blade design"
+      <section className="cinema-hero" id="posts">
+        <video
+          className="cinema-hero-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/whale-tubercles.svg"
+          aria-hidden="true"
+        >
+          <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4"
+            type="video/mp4"
           />
-        </figure>
-        <div className="ux-actions">
-          {featured && (
-            <Link href={`/posts/${featured.slug}`} className="btn-primary">
-              Read the latest essay
+        </video>
+        <div className="cinema-hero-overlay" aria-hidden="true" />
+        <div className="cinema-hero-fade" aria-hidden="true" />
+
+        <div className="cinema-hero-content">
+          <div className="cinema-badge liquid-glass" role="presentation">
+            <span className="cinema-badge-pill">New</span>
+            <span className="cinema-badge-text">Issue one — biomimicry field guide</span>
+          </div>
+
+          <h1 className="cinema-title">
+            Built for readers who ship better systems by studying nature.
+          </h1>
+
+          <p className="cinema-sub">
+            Editorial archive on biomimicry. How beetles, jellyfish, termites, butterflies,
+            geckos, and whales quietly inform buildings, materials, vehicles, medical
+            devices, and interfaces.
+          </p>
+
+          <div className="cinema-actions">
+            {featured && (
+              <Link href={`/posts/${featured.slug}`} className="cinema-cta liquid-glass-strong">
+                <span>Read the latest essay</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+              </Link>
+            )}
+            <Link href="/posts" className="cinema-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              <span>Browse the archive</span>
             </Link>
-          )}
-          <Link href="/posts" className="btn-secondary">
-            Browse the archive
-          </Link>
+          </div>
+
+          <div className="cinema-trust">
+            <div className="cinema-trust-pill liquid-glass">Trusted references from</div>
+            <ul className="cinema-trust-list">
+              {["MIT", "Caltech", "ETH Zürich", "RIKEN", "Stanford"].map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          </div>
         </div>
+      </section>
+
+      <section className="ux-hero ux-hero-secondary">
+        <p className="ux-kicker">About this issue</p>
         <ul className="ux-stat-list">
           {STATS.map((item) => (
             <li key={item.label}>

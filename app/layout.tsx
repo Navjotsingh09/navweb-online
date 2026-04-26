@@ -37,35 +37,70 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const year = new Date().getFullYear();
+
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap"
+        />
+      </head>
       <body>
-        <div className="site-shell">
-          <div className="site-ribbon">
-            <span>Biomimicry journal</span>
-            <span>Case studies from biology to engineering</span>
+        <header className="site-header-wrap">
+          <div className="site-shell">
+            <header className="site-header">
+              <Link className="brand" href="/">
+                <span className="brand-mark">NW</span>
+                <span className="brand-copy">
+                  <strong>Nav Web Online</strong>
+                </span>
+              </Link>
+              <nav className="site-nav" aria-label="Primary">
+                <Link href="/">Home</Link>
+                <Link href="/posts">Blog</Link>
+                <Link href="/#about">About</Link>
+              </nav>
+            </header>
           </div>
-          <header className="site-header">
-            <Link className="brand" href="/">
-              <span className="brand-mark">NW</span>
-              <span className="brand-copy">
-                <strong>Nav Web Online</strong>
-                <small>Journal of biomimicry and innovation</small>
-              </span>
-            </Link>
-            <nav className="site-nav">
-              <Link href="/">Index</Link>
+        </header>
+        <Analytics />
+        <main className="site-main">{children}</main>
+        <footer className="site-footer">
+          <div className="site-shell site-footer-grid">
+            <div className="footer-col">
+              <p className="footer-heading">Nav Web Online</p>
+              <p>Biomimicry editorial archive for builders, researchers, and designers.</p>
+            </div>
+
+            <div className="footer-col">
+              <p className="footer-heading">Navigate</p>
+              <Link href="/">Home</Link>
               <Link href="/posts">Archive</Link>
               <Link href="/#about">About</Link>
-            </nav>
-          </header>
-        </div>
-        <Analytics />
-        <main>{children}</main>
-        <footer className="site-footer">
-          <div className="site-footer-inner">
-            <p>© {new Date().getFullYear()} Nav Web Online</p>
-            <p>Editorial notes on organisms, mechanisms, prototypes, and products.</p>
+            </div>
+
+            <div className="footer-col">
+              <p className="footer-heading">Highlights</p>
+              <p>14 essays in archive</p>
+              <p>Long-form case studies</p>
+            </div>
+
+            <form className="footer-col footer-newsletter" action="#" method="post">
+              <label htmlFor="footer-email" className="footer-heading">Newsletter</label>
+              <div className="footer-newsletter-row">
+                <input id="footer-email" type="email" placeholder="you@example.com" />
+                <button type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+
+          <div className="site-shell footer-legal">
+            <p>© {year} Nav Web Online</p>
+            <p>Built for readers who ship better systems by studying nature.</p>
           </div>
         </footer>
       </body>
