@@ -14,6 +14,17 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
     [selectedTags]
   );
 
+  const featuredPost = filteredPosts[0];
+  const secondaryPosts = filteredPosts.slice(1, 4);
+  const archivePosts = filteredPosts.slice(4);
+
+  const formatDate = (date: string) =>
+    new Date(date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag)
@@ -26,90 +37,144 @@ export function PostsFilter({ posts }: { posts: PostMeta[] }) {
 
   return (
     <div className="container posts-page">
-      {/* ── Page header ── */}
-      <div className="posts-header">
-        <h1>Essays on biomimicry &amp; innovation</h1>
-        <p>
-          {filteredPosts.length} post{filteredPosts.length !== 1 ? 's' : ''}{' '}
-          {selectedTags.length > 0 && `matching ${selectedTags.join(', ')}`}
-        </p>
-      </div>
-
-      {/* ── Tag filters ── */}
-      <div className="filters-bar">
-        <div className="filter-tags">
-          {allTags.map((tag) => (
-            <button
-              key={tag}
-              className={`filter-tag ${selectedTags.includes(tag) ? 'active' : ''}`}
-              onClick={() => toggleTag(tag)}
-            >
-              #{tag}
-            </button>
-          ))}
-        </div>
-        {selectedTags.length > 0 && (
-          <button className="filter-clear" onClick={clearFilters}>
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      {/* ── Posts grid ── */}
       {filteredPosts.length > 0 ? (
-        <div className="posts-grid">
-          {filteredPosts.map((post) => (
-            <article key={post.slug} className="post-card">
-              <Link href={`/posts/${post.slug}`}>
-                <h2 className="post-card-title">{post.title}</h2>
-              </Link>
-              
-              <div className="post-card-meta">
-                {post.date && (
-                  <time dateTime={post.date} className="post-date">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </time>
-                )}
-                <span className="post-divider">·</span>
-                <span className="post-reading-time">
-                  {getReadingTime(post.excerpt || '')} min read
-                </span>
+        <>
+          <section className="posts-masthead">
+            <div className="posts-masthead-copy">
+              <p className="posts-kicker">Journal / Biomimicry archive</p>
+              <h1>Field notes from nature, translated into engineering.</h1>
+              <p className="posts-intro">
+                A slower-reading collection of case studies on organisms, mechanisms,
+                prototypes, and the design decisions humans borrow from living systems.
+              </p>
+            </div>
+
+            <aside className="posts-ledger">
+              <div className="posts-ledger-row">
+                <span>Issue</span>
+                <strong>Vol. 01</strong>
               </div>
+              <div className="posts-ledger-row">
+                <span>Archive</span>
+                <strong>{filteredPosts.length} essays</strong>
+              </div>
+              <div className="posts-ledger-row">
+                <span>Focus</span>
+                <strong>
+                  {selectedTags.length > 0 ? selectedTags.join(', ') : 'Open index'}
+                </strong>
+              </div>
+            </aside>
+          </section>
 
-              {post.excerpt && <p className="post-card-excerpt">{post.excerpt}…</p>}
+          <div className="filters-bar">
+            <div className="filter-tags">
+              {allTags.map((tag) => (
+                <button
+                  key={tag}
+                  className={`filter-tag ${selectedTags.includes(tag) ? 'active' : ''}`}
+                  onClick={() => toggleTag(tag)}
+                >
+                  #{tag}
+                </button>
+              ))}
+            </div>
+            {selectedTags.length > 0 && (
+              <button className="filter-clear" onClick={clearFilters}>
+                Reset issue filter
+              </button>
+            )}
+          </div>
 
-              {post.tags.length > 0 && (
-                <ul className="post-card-tags">
-                  {post.tags.map((tag) => (
-                    <li key={tag}>
-                      <button
-                        className="tag-link"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (!selectedTags.includes(tag)) {
-                            setSelectedTags([...selectedTags, tag]);
-                          }
-                        }}
-                      >
-                        #{tag}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="post-card-footer">
-                <Link href={`/posts/${post.slug}`} className="read-link">
-                  Read →
+          <section className="posts-journal-grid">
+            {featuredPost && (
+              <article className="lead-story">
+                <p className="story-label">Featured essay</p>
+                <Link href={`/posts/${featuredPost.slug}`} className="lead-story-link">
+                  <h2>{featuredPost.title}</h2>
                 </Link>
+                <div className="lead-story-meta">
+                  <time dateTime={featuredPost.date}>{formatDate(featuredPost.date)}</time>
+                  <span>·</span>
+                  <span>{getReadingTime(featuredPost.excerpt || '')} min read</span>
+                </div>
+                {featuredPost.excerpt && (
+                  <p className="lead-story-excerpt">{featuredPost.excerpt}…</p>
+                )}
+                {featuredPost.tags.length > 0 && (
+                  <ul className="post-card-tags lead-story-tags">
+                    {featuredPost.tags.map((tag) => (
+                      <li key={tag}>
+                        <button
+                          className="tag-link"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (!selectedTags.includes(tag)) {
+                              setSelectedTags([...selectedTags, tag]);
+                            }
+                          }}
+                        >
+                          #{tag}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <Link href={`/posts/${featuredPost.slug}`} className="read-link lead-read-link">
+                  Read the full essay
+                </Link>
+              </article>
+            )}
+
+            <div className="secondary-stories">
+              {secondaryPosts.map((post, index) => (
+                <article key={post.slug} className="secondary-story">
+                  <p className="secondary-story-index">0{index + 1}</p>
+                  <Link href={`/posts/${post.slug}`} className="secondary-story-link">
+                    <h3>{post.title}</h3>
+                  </Link>
+                  <div className="post-card-meta secondary-story-meta">
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    <span className="post-divider">·</span>
+                    <span>{getReadingTime(post.excerpt || '')} min read</span>
+                  </div>
+                  {post.excerpt && <p className="post-card-excerpt">{post.excerpt}…</p>}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {archivePosts.length > 0 && (
+            <section className="posts-archive">
+              <div className="posts-archive-heading">
+                <p className="posts-kicker">Archive</p>
+                <h2>More essays in the notebook</h2>
               </div>
-            </article>
-          ))}
-        </div>
+
+              <div className="archive-list">
+                {archivePosts.map((post) => (
+                  <article key={post.slug} className="archive-entry">
+                    <div className="archive-entry-date">
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    </div>
+                    <div className="archive-entry-body">
+                      <Link href={`/posts/${post.slug}`} className="archive-entry-link">
+                        <h3>{post.title}</h3>
+                      </Link>
+                      {post.excerpt && <p>{post.excerpt}…</p>}
+                    </div>
+                    <div className="archive-entry-meta">
+                      <span>{getReadingTime(post.excerpt || '')} min</span>
+                      <Link href={`/posts/${post.slug}`} className="read-link">
+                        Open
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+        </>
       ) : (
         <div className="posts-empty">
           <p>No posts match those filters. Try clearing them.</p>
