@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { listPosts, type PostMeta } from "@/lib/posts";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
+
 export const metadata: Metadata = {
   title: "Topics — Browse Biomimicry Essays by Subject",
   description:
@@ -42,8 +44,39 @@ export default function TopicsPage() {
   const totalEssays = posts.length;
   const totalTopics = sortedTags.length;
 
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Topics — Browse Biomimicry Essays by Subject",
+    url: `${SITE_URL}/topics`,
+    inLanguage: "en-GB",
+    isPartOf: { "@type": "WebSite", name: "Nav Web Online", url: SITE_URL },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 2, name: "Topics", item: `${SITE_URL}/topics` },
+      ],
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: sortedTags.length,
+      itemListElement: sortedTags.map(({ tag, count }, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: tag,
+        url: `${SITE_URL}/topics#${slugifyTag(tag)}`,
+        description: `${count} essays on ${tag}`,
+      })),
+    },
+  };
+
   return (
     <div className="topics-shell">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }}
+      />
       <header className="topics-hero">
         <p className="topics-kicker">Index</p>
         <h1 className="topics-title">

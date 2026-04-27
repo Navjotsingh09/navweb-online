@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import { Instrument_Serif, Barlow } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 const GA_MEASUREMENT_ID = "G-8EDKF5LYDC";
@@ -8,6 +9,21 @@ import { MobileMenu } from "./mobile-menu";
 import { FooterNewsletter } from "./footer-newsletter";
 import { listPosts } from "@/lib/posts";
 import "./globals.css";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-barlow",
+  display: "swap",
+});
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
 const SITE_NAME = "Nav Web Online";
@@ -57,6 +73,12 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
 
 export default function RootLayout({
@@ -70,14 +92,8 @@ export default function RootLayout({
   const topics = Array.from(new Set(posts.flatMap((p) => p.tags))).filter(Boolean);
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${instrumentSerif.variable} ${barlow.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap"
-        />
         <link
           rel="alternate"
           type="application/rss+xml"

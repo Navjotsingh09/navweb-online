@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { listPosts } from '@/lib/posts';
 import { PostsFilter } from './posts-filter';
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.navweb.online';
+
 export const metadata: Metadata = {
   title: 'All Essays — Biomimicry & Bio-Inspired Design',
   description:
@@ -19,5 +21,39 @@ export const metadata: Metadata = {
 export default function PostsPage() {
   const posts = listPosts();
 
-  return <PostsFilter posts={posts} />;
+  const collectionLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'All Essays — Nav Web Online',
+    url: `${SITE_URL}/posts`,
+    inLanguage: 'en-GB',
+    isPartOf: { '@type': 'WebSite', name: 'Nav Web Online', url: SITE_URL },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Essays', item: `${SITE_URL}/posts` },
+      ],
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: posts.length,
+      itemListElement: posts.slice(0, 50).map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE_URL}/posts/${p.slug}`,
+        name: p.title,
+      })),
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionLd) }}
+      />
+      <PostsFilter posts={posts} />
+    </>
+  );
 }
