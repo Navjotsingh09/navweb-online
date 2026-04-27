@@ -6,6 +6,7 @@ import type { AgentImage } from "@/lib/unsplash";
 import Comments from "@/components/Comments";
 import ListenButton from "@/components/ListenButton";
 import AudioPlayer from "@/components/AudioPlayer";
+import { PostCta } from "@/components/PostCta";
 import { findRelatedPosts, getReadingTime } from "@/lib/post-utils";
 import fs from "node:fs";
 import path from "node:path";
@@ -237,6 +238,8 @@ export default async function PostPage({
             illustrative numbers are scene-setting unless a citation is provided. Where a
             source link appears, please follow it for the underlying claim.
           </aside>
+
+          <PostCta tags={post.tags} slug={slug} />
 
           <script
             type="application/ld+json"

@@ -3937,3 +3937,59 @@ a {
   .vfeature-poster-meta { left: 18px; right: 18px; bottom: 16px; }
   .vfeature-poster-title { font-size: 1.05rem; }
 }
+
+/* ---- Per-post 5rv.digital CTA ---- */
+.post-cta {
+  margin: 2.5rem 0 2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0e1116 0%, #1a2230 100%);
+  color: #f4f6fa;
+  overflow: hidden;
+  box-shadow: 0 8px 30px -12px rgba(15, 23, 42, 0.35);
+}
+.post-cta-inner {
+  padding: 1.6rem 1.8rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.post-cta-kicker {
+  margin: 0;
+  font: 500 0.7rem/1 var(--font-barlow), "Barlow", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8aa0c2;
+}
+.post-cta-headline {
+  margin: 0.1rem 0 0;
+  font: 400 1.55rem/1.15 var(--font-instrument-serif), "Instrument Serif", Georgia, serif;
+  color: #fff;
+}
+.post-cta-sub {
+  margin: 0;
+  font: 400 0.98rem/1.5 var(--font-barlow), "Barlow", sans-serif;
+  color: #c9d3e2;
+  max-width: 52ch;
+}
+.post-cta-button {
+  align-self: flex-start;
+  margin-top: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.68rem 1.1rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #0e1116;
+  font: 600 0.88rem/1 var(--font-barlow), "Barlow", sans-serif;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.post-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 640px) {
+  .post-cta-inner { padding: 1.3rem 1.3rem 1.5rem; }
+  .post-cta-headline { font-size: 1.35rem; }
+}
