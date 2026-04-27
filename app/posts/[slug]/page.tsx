@@ -4,6 +4,7 @@ import { getPost, listPostSlugs, listPosts } from "@/lib/posts";
 import { resolveUnsplashImages } from "@/lib/unsplash";
 import type { AgentImage } from "@/lib/unsplash";
 import Comments from "@/components/Comments";
+import ListenButton from "@/components/ListenButton";
 import { findRelatedPosts, getReadingTime } from "@/lib/post-utils";
 import fs from "node:fs";
 import path from "node:path";
@@ -90,6 +91,17 @@ export default async function PostPage({
     .trim()
     .split(/\n\s*\n/)[0]
     ?.slice(0, 260);
+
+  const narrationText = post.raw
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/[*_`>]/g, "")
+    .replace(/\s+\n/g, "\n")
+    .replace(/\n{2,}/g, ". ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 
   return (
     <div className="post-page-shell">
@@ -182,6 +194,8 @@ export default async function PostPage({
             <h1>{post.title}</h1>
             {excerpt && <p className="post-dek">{excerpt}…</p>}
           </header>
+
+          <ListenButton title={post.title} text={narrationText} />
 
           {(heroImage || post.coverImage) && (
             <figure className="hero-image editorial-hero-image">
