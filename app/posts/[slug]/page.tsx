@@ -42,6 +42,7 @@ export async function generateMetadata({
     title: post.title,
     description: excerpt,
     keywords: post.tags?.length ? [...post.tags, "biomimicry", "bio-inspired design"] : undefined,
+    authors: [{ name: "Navjot Singh", url: SITE_URL }],
     alternates: { canonical: postUrl },
     openGraph: {
       type: "article",
@@ -49,12 +50,16 @@ export async function generateMetadata({
       description: excerpt,
       url: postUrl,
       publishedTime: post.date,
+      modifiedTime: post.dateModified ?? post.date,
+      authors: ["Navjot Singh"],
       tags: post.tags,
+      images: [`${postUrl}/opengraph-image`],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: excerpt,
+      images: [`${postUrl}/opengraph-image`],
     },
   };
 }
@@ -242,11 +247,15 @@ export default async function PostPage({
                 headline: post.title,
                 description: excerpt,
                 datePublished: post.date,
-                dateModified: post.date,
-                author: { "@type": "Organization", name: "Navweb.Online" },
+                dateModified: post.dateModified ?? post.date,
+                author: {
+                  "@type": "Person",
+                  name: "Navjot Singh",
+                  url: SITE_URL,
+                },
                 publisher: {
                   "@type": "Organization",
-                  name: "Navweb.Online",
+                  name: "Nav Web Online",
                   url: SITE_URL,
                   logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png` },
                 },
@@ -254,8 +263,24 @@ export default async function PostPage({
                   "@type": "WebPage",
                   "@id": `${SITE_URL}/posts/${slug}`,
                 },
-                image: [heroImage?.url || post.coverImage || `${SITE_URL}/og-default.png`],
+                image: [heroImage?.url || post.coverImage || `${SITE_URL}/posts/${slug}/opengraph-image`],
                 keywords: post.tags.join(", "),
+                articleSection: post.tags[0] ?? "Biomimicry",
+                inLanguage: "en-GB",
+              }),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+                  { "@type": "ListItem", position: 2, name: "Essays", item: `${SITE_URL}/posts` },
+                  { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_URL}/posts/${slug}` },
+                ],
               }),
             }}
           />

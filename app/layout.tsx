@@ -78,6 +78,50 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap"
         />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`${SITE_NAME} — Essays`}
+          href={`${SITE_URL}/feed.xml`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: SITE_NAME,
+              alternateName: "Navweb.Online",
+              url: SITE_URL,
+              description: SITE_DESC,
+              inLanguage: "en-GB",
+              publisher: {
+                "@type": "Person",
+                name: "Navjot Singh",
+                url: SITE_URL,
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${SITE_URL}/posts?q={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Navjot Singh",
+              url: SITE_URL,
+              email: "navjot.singh@5rv.digital",
+              jobTitle: "Writer & Engineer",
+              sameAs: [SITE_URL],
+            }),
+          }}
+        />
       </head>
       <body>
         <header className="floating-nav-wrap" aria-label="Site header">

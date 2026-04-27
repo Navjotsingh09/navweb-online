@@ -29,6 +29,7 @@ export type PostMeta = {
 export type Post = PostMeta & {
   html: string;
   raw: string;
+  dateModified?: string;
 };
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
@@ -141,6 +142,7 @@ export async function getPost(slug: string): Promise<Post | null> {
   const file = path.join(POSTS_DIR, `${slug}.md`);
   if (!fs.existsSync(file)) return null;
   const raw = fs.readFileSync(file, "utf8");
+  const stat = fs.statSync(file);
   const { data, content } = matter(raw);
   const cover = extractFirstImage(content);
   const contentWithoutLeadImage = stripFirstImage(content);
@@ -164,5 +166,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     sources: parseSources(data.sources),
     html,
     raw: contentWithoutLeadImage,
+    dateModified: new Date(stat.mtimeMs).toISOString(),
   };
 }
