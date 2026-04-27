@@ -79,7 +79,7 @@ export default function RootLayout({
       <body>
         <header className="floating-nav-wrap" aria-label="Site header">
           <div className="floating-nav">
-            <Link className="floating-nav-brand" href="/" aria-label="Nav Web Online — home">
+            <Link className="floating-nav-brand" href="/" aria-label="NW — Nav Web Online home">
               <span className="floating-nav-brand-mark">NW</span>
             </Link>
 
@@ -116,7 +116,7 @@ export default function RootLayout({
           </h2>
           <div className="site-shell site-footer-grid">
             <div className="footer-col footer-col-brand">
-              <Link href="/" className="footer-brand" aria-label="Nav Web Online — home">
+              <Link href="/" className="footer-brand">
                 <span className="footer-brand-mark">NW</span>
                 <span className="footer-brand-name">Nav Web Online</span>
               </Link>
