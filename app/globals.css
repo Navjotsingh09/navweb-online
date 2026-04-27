@@ -4323,3 +4323,129 @@ a {
   margin: 2rem 0;
 }
 .editorial-disclaimer strong { color: #3d3520; }
+
+/* ================= Collaborate · Services grid ================= */
+.collab-services {
+  margin: 3rem 0 3.5rem;
+  padding: 2.5rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+.collab-services-head {
+  max-width: 720px;
+  margin: 0 0 2rem;
+}
+.collab-services-kicker {
+  margin: 0 0 0.6rem;
+  font: 500 0.74rem/1 var(--font-barlow), "Barlow", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+.collab-services-title {
+  margin: 0;
+  font: 400 clamp(1.7rem, 3.4vw, 2.6rem)/1.05 var(--font-instrument-serif), "Instrument Serif", Georgia, serif;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.collab-services-sub {
+  margin: 0.9rem 0 0;
+  font: 400 1.02rem/1.6 var(--font-barlow), "Barlow", sans-serif;
+  color: #4a5258;
+}
+.collab-services-sub strong { color: var(--fg); font-weight: 600; }
+
+.collab-services-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.collab-service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  padding: 1.5rem 1.5rem 1.6rem;
+  background: #fbf9f4;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+.collab-service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0) 0%, rgba(20, 184, 166, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+}
+.collab-service-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15, 118, 110, 0.4);
+  box-shadow: 0 14px 34px -16px rgba(15, 118, 110, 0.3);
+}
+.collab-service-card:hover::after { opacity: 1; }
+.collab-service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(15, 118, 110, 0.08);
+  color: #0f766e;
+  margin-bottom: 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+.collab-service-name {
+  margin: 0;
+  font: 500 1.18rem/1.25 var(--font-barlow), "Barlow", sans-serif;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+  position: relative;
+  z-index: 1;
+}
+.collab-service-blurb {
+  margin: 0;
+  flex-grow: 1;
+  font: 400 0.95rem/1.55 var(--font-barlow), "Barlow", sans-serif;
+  color: #4a5258;
+  position: relative;
+  z-index: 1;
+}
+.collab-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.4rem;
+  font: 600 0.86rem/1 var(--font-barlow), "Barlow", sans-serif;
+  color: #0f766e;
+  position: relative;
+  z-index: 1;
+  transition: gap 0.18s ease;
+}
+.collab-service-card:hover .collab-service-link { gap: 10px; color: #134e4a; }
+
+.collab-services-foot {
+  margin: 1.6rem 0 0;
+  font: 400 0.95rem/1.5 var(--font-barlow), "Barlow", sans-serif;
+  color: var(--muted);
+}
+.collab-services-foot a {
+  color: #0f766e;
+  text-decoration: none;
+  font-weight: 600;
+}
+.collab-services-foot a:hover { color: #134e4a; text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .collab-service-card { padding: 1.3rem 1.3rem 1.4rem; }
+}
