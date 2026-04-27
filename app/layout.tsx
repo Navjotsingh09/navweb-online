@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+
+const GA_MEASUREMENT_ID = "G-8EDKF5LYDC";
 import { MobileMenu } from "./mobile-menu";
 import { FooterNewsletter } from "./footer-newsletter";
 import { listPosts } from "@/lib/posts";
@@ -109,6 +112,18 @@ export default function RootLayout({
           </div>
         </header>
         <Analytics />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <main className="site-main">{children}</main>
         <footer className="site-footer" aria-labelledby="footer-heading">
           <h2 id="footer-heading" className="visually-hidden">
@@ -148,7 +163,7 @@ export default function RootLayout({
               <p className="footer-heading">Resources</p>
               <a href="/sitemap.xml">Sitemap</a>
               <a href="/robots.txt">Robots</a>
-              <a href="mailto:hello@navweb.online">hello@navweb.online</a>
+              <a href="mailto:navjot.singh@5rv.digital">navjot.singh@5rv.digital</a>
             </div>
 
             <FooterNewsletter topics={topics} />
@@ -157,6 +172,12 @@ export default function RootLayout({
           <div className="site-shell footer-legal">
             <p>© {year} Nav Web Online. All essays released for human reading.</p>
             <p>Built for readers who ship better systems by studying nature.</p>
+            <p>
+              Powered by{" "}
+              <a href="https://5rv.digital" target="_blank" rel="noopener noreferrer">
+                5rv.digital
+              </a>
+            </p>
           </div>
         </footer>
       </body>
