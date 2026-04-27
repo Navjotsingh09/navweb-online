@@ -4,7 +4,7 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "devCommand": "next dev",
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "crons": [
     {
