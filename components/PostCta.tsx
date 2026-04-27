@@ -93,8 +93,12 @@ export function PostCta({ tags, slug }: { tags: string[]; slug: string }) {
 
   return (
     <aside className="post-cta" aria-label="Sponsored by 5rv.digital">
+      <div className="post-cta-glow" aria-hidden="true" />
       <div className="post-cta-inner">
-        <p className="post-cta-kicker">From the studio</p>
+        <p className="post-cta-kicker">
+          <span className="post-cta-dot" aria-hidden="true" />
+          From the studio · 5rv.digital
+        </p>
         <h3 className="post-cta-headline">{variant.headline}</h3>
         <p className="post-cta-sub">{variant.sub}</p>
         <a
@@ -103,8 +107,9 @@ export function PostCta({ tags, slug }: { tags: string[]; slug: string }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {variant.button}
+          <span>{variant.button}</span>
         </a>
+        <p className="post-cta-foot">AI-assisted design &amp; engineering · UK-based</p>
       </div>
     </aside>
   );

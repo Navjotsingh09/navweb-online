@@ -7,6 +7,7 @@ import Comments from "@/components/Comments";
 import ListenButton from "@/components/ListenButton";
 import AudioPlayer from "@/components/AudioPlayer";
 import { PostCta } from "@/components/PostCta";
+import ReadingProgress from "@/components/ReadingProgress";
 import { findRelatedPosts, getReadingTime } from "@/lib/post-utils";
 import fs from "node:fs";
 import path from "node:path";
@@ -117,6 +118,7 @@ export default async function PostPage({
 
   return (
     <div className="post-page-shell">
+      <ReadingProgress />
       <article className="post-page-grid">
         <aside className="post-sidebar">
           <Link href="/posts" className="post-back-link">← Back to archive</Link>
@@ -213,6 +215,33 @@ export default async function PostPage({
             <p className="posts-kicker">Essay / Biomimicry archive</p>
             <h1>{post.title}</h1>
             {excerpt && <p className="post-dek">{excerpt}…</p>}
+            <div className="post-hero-meta" aria-label="Article metadata">
+              {post.date && (
+                <span className="post-hero-chip">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                  </svg>
+                  <time dateTime={post.date}>
+                    {new Date(post.date).toLocaleDateString("en-GB", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </time>
+                </span>
+              )}
+              <span className="post-hero-chip">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+                {getReadingTime(post.raw)} min read
+              </span>
+              {post.tags.slice(0, 3).map((t) => (
+                <span key={t} className="post-hero-chip post-hero-chip-tag">#{t}</span>
+              ))}
+            </div>
           </header>
 
           {(heroImage || post.coverImage) && (
@@ -229,7 +258,7 @@ export default async function PostPage({
             </figure>
           )}
 
-          <div className="prose editorial-prose" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div className="prose editorial-prose has-dropcap" dangerouslySetInnerHTML={{ __html: post.html }} />
 
           <aside className="editorial-disclaimer" role="note" aria-label="Editorial note">
             <strong>Editorial note.</strong> This essay is opinion and synthesis — original
