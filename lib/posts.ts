@@ -7,6 +7,12 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 
+export type PostSource = {
+  label: string;
+  url: string;
+  type?: "primary" | "secondary" | "video" | "docs" | "opinion";
+};
+
 export type PostMeta = {
   slug: string;
   title: string;
@@ -16,6 +22,8 @@ export type PostMeta = {
   coverImage?: string;
   coverAlt?: string;
   youtubeUrl?: string;
+  truth?: number;
+  sources?: PostSource[];
 };
 
 export type Post = PostMeta & {
@@ -34,6 +42,34 @@ function extractFirstImage(markdown: string): { alt: string; src: string } | nul
 
 function stripFirstImage(markdown: string): string {
   return markdown.replace(FIRST_IMAGE_RE, "").trim();
+}
+
+function parseSources(input: unknown): PostSource[] | undefined {
+  if (!Array.isArray(input)) return undefined;
+  const out: PostSource[] = [];
+  for (const item of input) {
+    if (item && typeof item === "object" && "url" in item) {
+      const obj = item as { label?: unknown; url?: unknown; type?: unknown };
+      if (typeof obj.url === "string" && obj.url.trim()) {
+        out.push({
+          label: typeof obj.label === "string" && obj.label.trim() ? obj.label : obj.url,
+          url: obj.url,
+          type:
+            typeof obj.type === "string" &&
+            ["primary", "secondary", "video", "docs", "opinion"].includes(obj.type)
+              ? (obj.type as PostSource["type"])
+              : undefined,
+        });
+      }
+    }
+  }
+  return out.length ? out : undefined;
+}
+
+function parseTruth(input: unknown): number | undefined {
+  const n = typeof input === "number" ? input : Number(input);
+  if (!Number.isFinite(n)) return undefined;
+  return Math.max(0, Math.min(100, Math.round(n)));
 }
 
 function buildYouTubeUrl(title: string, tags: string[]): string {
@@ -79,6 +115,8 @@ export function listPosts(): PostMeta[] {
         coverImage: cover?.src,
         coverAlt: cover?.alt,
         youtubeUrl: buildYouTubeUrl(String(data.title ?? slug), Array.isArray(data.tags) ? data.tags.map(String) : []),
+        truth: parseTruth(data.truth),
+        sources: parseSources(data.sources),
         _mtimeMs: mtimeMs,
       };
     })
@@ -122,6 +160,8 @@ export async function getPost(slug: string): Promise<Post | null> {
     coverImage: cover?.src,
     coverAlt: cover?.alt,
     youtubeUrl: buildYouTubeUrl(String(data.title ?? slug), Array.isArray(data.tags) ? data.tags.map(String) : []),
+    truth: parseTruth(data.truth),
+    sources: parseSources(data.sources),
     html,
     raw: contentWithoutLeadImage,
   };

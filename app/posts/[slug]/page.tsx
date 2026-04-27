@@ -135,6 +135,45 @@ export default async function PostPage({
               </ul>
             </div>
           )}
+          {typeof post.truth === "number" && (
+            <div className="post-sidebar-block truth-block">
+              <span className="post-sidebar-label">Truth score</span>
+              <div className="truth-meter" aria-label={`Truth score ${post.truth} percent`}>
+                <div
+                  className="truth-meter-fill"
+                  style={{
+                    width: `${post.truth}%`,
+                    background:
+                      post.truth >= 80
+                        ? "#2f8f5e"
+                        : post.truth >= 60
+                        ? "#c9a55a"
+                        : "#c97a4a",
+                  }}
+                />
+              </div>
+              <strong className="truth-value">{post.truth}% verifiable</strong>
+              <p className="truth-note">
+                Share of claims directly traceable to a cited source. The remainder is
+                framing, opinion, or illustrative scenario.
+              </p>
+            </div>
+          )}
+          {post.sources && post.sources.length > 0 && (
+            <div className="post-sidebar-block">
+              <span className="post-sidebar-label">Sources</span>
+              <ul className="post-sources">
+                {post.sources.map((s) => (
+                  <li key={s.url}>
+                    <a href={s.url} target="_blank" rel="noopener noreferrer">
+                      {s.label}
+                    </a>
+                    {s.type && <span className="source-type"> · {s.type}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </aside>
 
         <div className="post-main">

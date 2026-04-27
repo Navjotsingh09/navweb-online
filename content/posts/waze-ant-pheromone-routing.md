@@ -3,6 +3,17 @@ title: "Waze, Ant Pheromones, and the Quiet Genius of Swarm Routing"
 slug: waze-ant-pheromone-routing
 date: 2026-04-29
 tags: [biomimicry, ux, navigation, mobile, swarm-intelligence, design-patterns]
+truth: 70
+sources:
+  - label: "Denny Royal — 3 Biomimicry Lessons (Medium)"
+    url: "https://medium.com/@DennyRoyal/3-biomimicry-lessons-for-designing-product-or-service-interactions-3d5ca59fb9b"
+    type: opinion
+  - label: "Dorigo & Stützle — Ant Colony Optimization (MIT Press)"
+    url: "https://mitpress.mit.edu/9780262042192/ant-colony-optimization/"
+    type: primary
+  - label: "Waze — How it works (official)"
+    url: "https://www.waze.com/about"
+    type: docs
 ---
 
 # Waze, Ant Pheromones, and the Quiet Genius of Swarm Routing

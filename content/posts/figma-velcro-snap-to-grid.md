@@ -3,6 +3,14 @@ title: "Figma's Snap-to-Grid Borrowed Its Magic from Burdock Seeds and Velcro"
 slug: figma-velcro-snap-to-grid
 date: 2026-05-02
 tags: [biomimicry, ux, design-tools, web, figma, design-patterns]
+truth: 60
+sources:
+  - label: "TheFinch — Biomimicry in UX Design"
+    url: "https://thefinch.design/biomimicry-in-ux-design/"
+    type: opinion
+  - label: "Figma Help — Snap to grid"
+    url: "https://help.figma.com/"
+    type: docs
 ---
 
 # Figma's Snap-to-Grid Borrowed Its Magic from Burdock Seeds and Velcro

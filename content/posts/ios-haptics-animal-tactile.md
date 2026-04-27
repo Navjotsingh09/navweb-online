@@ -3,6 +3,14 @@ title: "Apple iOS Haptics — How a Phone Learned to Tap You Back Like a Cat"
 slug: ios-haptics-animal-tactile
 date: 2026-05-01
 tags: [biomimicry, ux, mobile, haptics, sensory-design, apple, design-patterns]
+truth: 75
+sources:
+  - label: "Apple HIG — Playing Haptics"
+    url: "https://developer.apple.com/design/human-interface-guidelines/playing-haptics"
+    type: primary
+  - label: "Ingenuity Software — Biomimicry in UI/UX Design"
+    url: "https://www.ingenuity.ph/biomimicry-in-ui-ux-design-nature-inspired-interfaces-for-seamless-experiences/"
+    type: opinion
 ---
 
 # Apple iOS Haptics — How a Phone Learned to Tap You Back Like a Cat

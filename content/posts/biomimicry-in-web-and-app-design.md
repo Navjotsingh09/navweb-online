@@ -3,6 +3,17 @@ title: "How Nature Designs Better Web & Mobile Apps — Biomimicry in Digital Pr
 slug: biomimicry-in-web-and-app-design
 date: 2026-04-27
 tags: [biomimicry, ux, product-design, mobile, web, design-patterns]
+truth: 75
+sources:
+  - label: "TheFinch — Biomimicry in UX Design"
+    url: "https://thefinch.design/biomimicry-in-ux-design/"
+    type: opinion
+  - label: "Ingenuity Software — Biomimicry in UI/UX Design"
+    url: "https://www.ingenuity.ph/biomimicry-in-ui-ux-design-nature-inspired-interfaces-for-seamless-experiences/"
+    type: opinion
+  - label: "Denny Royal — 3 Biomimicry Lessons (Medium)"
+    url: "https://medium.com/@DennyRoyal/3-biomimicry-lessons-for-designing-product-or-service-interactions-3d5ca59fb9b"
+    type: opinion
 ---
 
 # How Nature Designs Better Web & Mobile Apps — Biomimicry in Digital Product Design

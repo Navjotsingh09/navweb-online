@@ -3,6 +3,14 @@ title: "Spotify's Fractal Menu — Why You Never Get Lost in 100 Million Songs"
 slug: spotify-fractal-branching
 date: 2026-04-30
 tags: [biomimicry, ux, audio, mobile, fractals, design-patterns]
+truth: 65
+sources:
+  - label: "TheFinch — Biomimicry in UX Design"
+    url: "https://thefinch.design/biomimicry-in-ux-design/"
+    type: opinion
+  - label: "Spotify Newsroom — Company info"
+    url: "https://newsroom.spotify.com/company-info/"
+    type: docs
 ---
 
 # Spotify's Fractal Menu — Why You Never Get Lost in 100 Million Songs

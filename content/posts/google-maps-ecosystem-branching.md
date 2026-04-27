@@ -3,6 +3,14 @@ title: "How Google Maps Borrowed the Logic of River Deltas and Tree Roots"
 slug: google-maps-ecosystem-branching
 date: 2026-04-28
 tags: [biomimicry, ux, navigation, web, design-patterns, google]
+truth: 65
+sources:
+  - label: "Ingenuity Software — Biomimicry in UI/UX Design"
+    url: "https://www.ingenuity.ph/biomimicry-in-ui-ux-design-nature-inspired-interfaces-for-seamless-experiences/"
+    type: opinion
+  - label: "Google Maps Help — Levels of detail"
+    url: "https://support.google.com/maps"
+    type: docs
 ---
 
 # How Google Maps Borrowed the Logic of River Deltas and Tree Roots

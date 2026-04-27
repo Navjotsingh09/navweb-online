@@ -3,6 +3,11 @@ title: "Biomimicry: Hoax or Genius? — A Field Note on DamiLee's Provocation"
 slug: biomimicry-hoax-or-genius-damilee
 date: 2026-04-27
 tags: [biomimicry, architecture, design-critique, video]
+truth: 80
+sources:
+  - label: "DamiLee — Biomimicry: Hoax or Genius? (YouTube)"
+    url: "https://www.youtube.com/watch?v=_KowHG5Wbgk"
+    type: video
 ---
 
 # Biomimicry: Hoax or Genius? — A Field Note on DamiLee's Provocation
