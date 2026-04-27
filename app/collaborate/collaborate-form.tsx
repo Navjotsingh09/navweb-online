@@ -76,7 +76,7 @@ export function CollaborateForm() {
     setErrorMsg("");
     try {
       const res = await fetch(
-        "https://formsubmit.co/ajax/navjotsinghhundal41@gmail.com",
+        "https://formsubmit.co/ajax/navjot.singh@5rv.digital",
         {
           method: "POST",
           headers: {
