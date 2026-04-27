@@ -1,0 +1,523 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .blog {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--color-text-primary);
+    max-width: 780px;
+    padding: 0 0 3rem;
+  }
+
+  .hero {
+    border-left: 3px solid #E24B4A;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    background: var(--color-background-secondary);
+    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #E24B4A;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--color-border-secondary);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 2rem 0;
+  }
+
+  .stat-card {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .stat-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1;
+  }
+
+  .stat-card .unit {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-top: 6px;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    color: var(--color-text-primary);
+  }
+
+  .body-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  .reason-grid {
+    display: grid;
+    gap: 1px;
+    background: var(--color-border-tertiary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .reason {
+    background: var(--color-background-primary);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .reason-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #E24B4A;
+    line-height: 1;
+    min-width: 32px;
+    opacity: 0.7;
+  }
+
+  .reason-content h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: var(--color-text-primary);
+  }
+
+  .reason-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+  }
+
+  .metrics-list {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .metrics-list h3 {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .metric-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .metric-item:last-child { border-bottom: none; }
+
+  .metric-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #E24B4A;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .metric-label {
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  .conversion-visual {
+    margin: 2rem 0;
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+  }
+
+  .conv-header {
+    background: var(--color-background-secondary);
+    padding: 0.75rem 1.25rem;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+  }
+
+  .conv-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    align-items: center;
+  }
+
+  .conv-row:last-child { border-bottom: none; }
+
+  .conv-cell {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  .conv-cell.strong {
+    font-weight: 500;
+    color: var(--color-text-primary);
+    font-size: 15px;
+  }
+
+  .conv-cell.good { color: #3B6D11; font-weight: 500; }
+  .conv-cell.bad { color: #A32D2D; font-weight: 500; }
+
+  .redflag {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: #FCEBEB;
+    border: 0.5px solid #F09595;
+    border-radius: var(--border-radius-md);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .redflag-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .redflag p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #791F1F;
+  }
+
+  .redflag strong { color: #501313; }
+
+  .cta-block {
+    margin-top: 3rem;
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .cta-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-block p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .cta-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .pill {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 0.5px solid var(--color-border-secondary);
+    color: var(--color-text-primary);
+    background: var(--color-background-primary);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .pill.primary {
+    background: #E24B4A;
+    border-color: #E24B4A;
+    color: #fff;
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--color-border-tertiary);
+    margin: 2.5rem 0;
+  }
+
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+
+  .review-card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem 1.25rem;
+  }
+
+  .stars { color: #BA7517; font-size: 13px; margin-bottom: 6px; }
+
+  .review-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: 8px;
+    font-weight: 300;
+  }
+
+  .reviewer {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+</style>
+
+<div class="blog">
+
+  <div class="hero">
+    <div class="hero-label">5RV Digital — SEO Intelligence</div>
+    <h1>Your SEO Report Shows Growth. So Why Is Your Phone Not Ringing?</h1>
+    <p class="hero-sub">Rankings and traffic are the beginning of the journey. Revenue is the destination. Here is why those two things are not the same — and what to do about it.</p>
+  </div>
+
+  <div class="pull-quote">
+    "A business getting 3,000 monthly organic visitors and zero enquiries is not an SEO success story. It is an SEO consultancy that optimised for the wrong thing."
+  </div>
+
+  <p class="body-text">Your monthly report shows keyword rankings climbing, impressions up 40%, and traffic growing week on week — yet your phone has not rung from a new customer in three months. This is more common than most agencies will admit.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">2.4%</div>
+      <div class="unit">Average SEO conversion rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">24</div>
+      <div class="unit">Enquiries expected per 1,000 visitors</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">40%</div>
+      <div class="unit">Revenue gain possible even with a rank drop</div>
+    </div>
+  </div>
+
+  <p class="body-text">One client holds the top spot in the local pack yet sees flat revenue. Another drops in rank but grows revenue by 40%. Rankings and revenue are not equivalent. If your consultancy is not tracking enquiry numbers, the issue lies with their strategy — not your traffic.</p>
+
+  <hr class="divider">
+
+  <div class="section-heading">The 6 Real Reasons Your SEO Generates Reports but Not Revenue</div>
+
+  <div class="reason-grid">
+    <div class="reason">
+      <div class="reason-num">01</div>
+      <div class="reason-content">
+        <h3>Targeting traffic volume instead of buyer intent</h3>
+        <p>Ranking for "what is SEO" attracts researchers. Ranking for an intent-led term attracts buyers ready to call. Most agencies optimise for volume because it is easier to show progress on a vanity dashboard. Demand to see the keywords driving actual form completions and phone calls.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-num">02</div>
+      <div class="reason-content">
+        <h3>Your website is not built to convert SEO traffic</h3>
+        <p>SEO gets people to your site. If your pages do not convert, every visit is wasted. Common killers: no phone number above the fold, page load over 3 seconds, no trust signals, generic CTAs. 33% of companies underinvest in CRO — creating a permanent gap no ranking improvement will close.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-num">03</div>
+      <div class="reason-content">
+        <h3>Your agency is measuring vanity metrics, not revenue indicators</h3>
+        <p>If your report leads with rankings and ends there, it is a vanity report. Your monthly report should show organic enquiries, revenue from organic search, keywords driving conversions, GBP performance, and month-on-month lead trend — not traffic trend.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-num">04</div>
+      <div class="reason-content">
+        <h3>Your Google Business Profile is being ignored</h3>
+        <p>A fully optimised GBP generates at least 200 profile views and 15–25 direct calls per month within 6 months. AI Overviews now appear for nearly 9% of transactional keywords. If your agency has never mentioned GBP in a report, your local SEO is being neglected entirely.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-num">05</div>
+      <div class="reason-content">
+        <h3>No alignment between SEO, social media, and branding</h3>
+        <p>Three separate suppliers gives you three strategies that do not talk to each other. 60% of marketers confirm SEO generates the highest quality leads — but only when supported by a brand that builds immediate credibility.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-num">06</div>
+      <div class="reason-content">
+        <h3>Your campaign has not been localised</h3>
+        <p>National tactics applied to a location-specific business produce national traffic that never converts locally. A properly localised Birmingham campaign needs location-specific landing pages, GBP optimisation for the local pack, citation building, and review generation across the West Midlands.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="redflag">
+    <div class="redflag-icon">⚑</div>
+    <p><strong>Red flag:</strong> Clients do not renew SEO contracts based on ranking improvements. They renew based on business growth. If your current agency cannot show you enquiry numbers, ask why — today.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-heading">What Good SEO Reporting Actually Looks Like in 2026</div>
+
+  <p class="body-text">Most businesses in the West Midlands have never seen a proper revenue-focused SEO report. Here is exactly what it should show every single month:</p>
+
+  <div class="metrics-list">
+    <h3>The 6 metrics your report must include</h3>
+    <div class="metric-item">
+      <div class="metric-dot"></div>
+      <div><span class="metric-label">Organic enquiries</span> — form completions and calls attributed to organic search in GA4</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-dot"></div>
+      <div><span class="metric-label">Revenue from organic channel</span> — actual value of leads or sales, not impressions</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-dot"></div>
+      <div><span class="metric-label">Keywords driving conversions</span> — only the terms generating real enquiries</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-dot"></div>
+      <div><span class="metric-label">Google Business Profile performance</span> — views, calls, and direction requests</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-dot"></div>
+      <div><span class="metric-label">Core Web Vitals status</span> — page speed and mobile performance scores</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-dot"></div>
+      <div><span class="metric-label">Month-on-month lead trend</span> — not traffic trend. Lead trend.</div>
+    </div>
+  </div>
+
+  <p class="body-text">If your report does not show all six, request an immediate restructure.</p>
+
+  <hr class="divider">
+
+  <div class="section-heading">The Conversion Gap in Numbers</div>
+
+  <div class="conversion-visual">
+    <div class="conv-header">Monthly traffic vs expected enquiries</div>
+    <div class="conv-row">
+      <div class="conv-cell" style="font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-secondary);">Monthly visitors</div>
+      <div class="conv-cell" style="font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-secondary);">Expected enquiries (2.4%)</div>
+      <div class="conv-cell" style="font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-secondary);">If reporting zero</div>
+    </div>
+    <div class="conv-row">
+      <div class="conv-cell strong">500</div>
+      <div class="conv-cell good">12 enquiries</div>
+      <div class="conv-cell bad">Problem exists</div>
+    </div>
+    <div class="conv-row">
+      <div class="conv-cell strong">1,000</div>
+      <div class="conv-cell good">24 enquiries</div>
+      <div class="conv-cell bad">Problem exists</div>
+    </div>
+    <div class="conv-row">
+      <div class="conv-cell strong">3,000</div>
+      <div class="conv-cell good">72 enquiries</div>
+      <div class="conv-cell bad">Serious problem</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-heading">What Our Clients Say</div>
+
+  <div class="reviews">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"What started off with a search for Digital marketing agency Birmingham has now resulted in a long lasting relationship. Huge thanks for helping me last minute with my restaurant launch."</p>
+      <div class="reviewer">Gursimran Kaur</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"These guys are amazing — they helped me set up my brand for my car company and killed my launch of my social media page. I'd highly recommend 5RV Digital to anyone."</p>
+      <div class="reviewer">Sukhvir Nijjar</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Great to work with. 5RV were fast and efficient and provided me with exactly what was requested."</p>
+      <div class="reviewer">Kaiser Majeed</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="cta-block">
+    <h2>30 minutes. No sales script. Just honest answers.</h2>
+    <p>Every business we have worked with started with one conversation. Find out what your SEO should actually be delivering — your free audit is delivered within 5 working days.</p>
+    <div class="cta-pills">
+      <a class="pill primary" href="https://calendly.com/prab-samra-5rv/30min">Book a 30-minute call</a>
+      <a class="pill" href="mailto:hello@5rv.digital">Email us directly</a>
+      <a class="pill" href="tel:02031503202">0203 150 3202</a>
+    </div>
+  </div>
+
+</div>
