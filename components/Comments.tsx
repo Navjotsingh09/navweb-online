@@ -83,10 +83,11 @@ export default function Comments({ postSlug }: CommentsProps) {
       <h2>Comments</h2>
 
       {loading && <p className="comments-status">Loading comments…</p>}
-      {error && <p className="comments-status comments-error">{error}</p>}
 
-      {!loading && !error && comments.length === 0 && (
-        <p className="comments-status">No comments yet. Be the first.</p>
+      {!loading && comments.length === 0 && (
+        <p className="comments-status">
+          {error ? "No comments yet. Be the first." : "No comments yet. Be the first."}
+        </p>
       )}
 
       {comments.length > 0 && (

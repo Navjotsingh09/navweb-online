@@ -20,22 +20,36 @@ export async function GET(req: NextRequest) {
       .collection("comments")
       .where("postSlug", "==", slug)
       .where("status", "==", "approved")
-      .orderBy("createdAt", "desc")
       .get();
 
-    const comments = snap.docs.map((doc: any) => {
-      const d = doc.data();
-      return {
-        id: doc.id,
-        author: d.author as string,
-        body: d.body as string,
-        createdAt: (d.createdAt as { toDate?: () => Date } | null)?.toDate?.()?.toISOString() ?? null,
-      };
-    });
+    const comments = snap.docs
+      .map((doc: any) => {
+        const d = doc.data();
+        const createdAtDate =
+          (d.createdAt as { toDate?: () => Date } | null)?.toDate?.() ?? null;
+        return {
+          id: doc.id,
+          author: d.author as string,
+          body: d.body as string,
+          createdAt: createdAtDate ? createdAtDate.toISOString() : null,
+          _ts: createdAtDate ? createdAtDate.getTime() : 0,
+        };
+      })
+      .sort((a, b) => b._ts - a._ts)
+      .map(({ _ts, ...rest }) => rest);
 
     return NextResponse.json({ comments });
   } catch (err) {
-    console.error("[comments GET]", err);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("[comments GET]", message, err);
+    // Don't break the page if Firestore isn't configured — just show empty list.
+    if (
+      message.includes("Missing Firebase env vars") ||
+      message.includes("FAILED_PRECONDITION") ||
+      message.includes("requires an index")
+    ) {
+      return NextResponse.json({ comments: [] });
+    }
     return NextResponse.json({ error: "Failed to fetch comments" }, { status: 500 });
   }
 }
