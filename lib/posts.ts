@@ -106,7 +106,7 @@ export async function getPost(slug: string): Promise<Post | null> {
   const { data, content } = matter(raw);
   const cover = extractFirstImage(content);
   const contentWithoutLeadImage = stripFirstImage(content);
-  const google07d1bd997931541c (1)html = String(
+  const html = String(
     await unified()
       .use(remarkParse)
       .use(remarkGfm)
