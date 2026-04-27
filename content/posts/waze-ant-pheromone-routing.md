@@ -9,7 +9,7 @@ tags: [biomimicry, ux, navigation, mobile, swarm-intelligence, design-patterns]
 
 ![Waze logo](https://cdn.simpleicons.org/waze)
 
-Waze knows you'll leave for work at 8:42 because for the last six Tuesdays, you have. It also knows that 4,300 other commuters on the same corridor have been re-routing around an accident on the M25 since 8:11. So at 8:27, before you've even reached for your phone, it pings: *leave now, take the A12*. There is no central planner deciding that for you. The decision is **emerging from the trail**.
+*Imagine this scenario.* Waze knows you'll leave for work at 8:42 because for the last six Tuesdays, you have. It also knows that thousands of other commuters on the same corridor have been re-routing around an accident on the motorway since just after 8am. So shortly before you'd normally leave, before you've even reached for your phone, it pings: *leave now, take the alternate route*. There is no central planner deciding that for you. The decision is **emerging from the trail**.
 
 That is exactly how an ant colony solves the travelling-salesman problem — and we covered the algorithm in depth in our [ant colony optimization essay](/posts/ant-colony-optimization-tesla-uber). This post is about how Waze translates the biology into product behaviour.
 

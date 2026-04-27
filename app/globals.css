@@ -323,6 +323,20 @@ h2 { font-size: 1.35rem; margin: 0 0 0.25rem; }
   margin: 1.25rem auto 2rem;
 }
 
+.editorial-disclaimer {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid #c9a55a;
+  background: #f7f3e8;
+  color: #4a4a4a;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  border-radius: 0 6px 6px 0;
+}
+.editorial-disclaimer strong {
+  color: #2d2d2d;
+}
+
 /* Hero image */
 .hero-image { margin: 1.5rem 0 2rem; }
 .hero-image img { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; display: block; }

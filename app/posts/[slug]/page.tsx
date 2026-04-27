@@ -43,13 +43,11 @@ export async function generateMetadata({
       url: postUrl,
       publishedTime: post.date,
       tags: post.tags,
-      images: [{ url: "/og-default.png", width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: excerpt,
-      images: ["/og-default.png"],
     },
   };
 }
@@ -161,6 +159,41 @@ export default async function PostPage({
           )}
 
           <div className="prose editorial-prose" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <aside className="editorial-disclaimer" role="note" aria-label="Editorial note">
+            <strong>Editorial note.</strong> This essay is opinion and synthesis — original
+            commentary connecting publicly available facts about real products to broader
+            patterns. It is not peer-reviewed research. Specific scenarios, dialogue, and
+            illustrative numbers are scene-setting unless a citation is provided. Where a
+            source link appears, please follow it for the underlying claim.
+          </aside>
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                headline: post.title,
+                description: excerpt,
+                datePublished: post.date,
+                dateModified: post.date,
+                author: { "@type": "Organization", name: "Navweb.Online" },
+                publisher: {
+                  "@type": "Organization",
+                  name: "Navweb.Online",
+                  url: SITE_URL,
+                  logo: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png` },
+                },
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": `${SITE_URL}/posts/${slug}`,
+                },
+                image: [heroImage?.url || post.coverImage || `${SITE_URL}/og-default.png`],
+                keywords: post.tags.join(", "),
+              }),
+            }}
+          />
 
           {relatedPosts.length > 0 && (
             <section className="related-posts">

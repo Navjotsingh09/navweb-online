@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { listPosts } from "@/lib/posts";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://navweb-online.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = listPosts();
@@ -12,13 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    ...postEntries,
+  const staticEntries: MetadataRoute.Sitemap = [
+    { url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
+    { url: `${SITE_URL}/posts`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${SITE_URL}/topics`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${SITE_URL}/collaborate`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   ];
+
+  return [...staticEntries, ...postEntries];
 }
