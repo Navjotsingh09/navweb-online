@@ -9,7 +9,7 @@ type Props = {
 
 type Status = "idle" | "playing" | "paused";
 
-export default function ListenButton({ title, text }: Props) {
+export default function ListenButton({ title: _title, text }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [supported, setSupported] = useState(true);
   const utterRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -19,7 +19,12 @@ export default function ListenButton({ title, text }: Props) {
       setSupported(false);
       return;
     }
+    // Trigger voices to load (Chrome loads them async)
+    window.speechSynthesis.getVoices();
+    const handler = () => window.speechSynthesis.getVoices();
+    window.speechSynthesis.addEventListener?.("voiceschanged", handler);
     return () => {
+      window.speechSynthesis.removeEventListener?.("voiceschanged", handler);
       window.speechSynthesis.cancel();
     };
   }, []);
@@ -40,16 +45,22 @@ export default function ListenButton({ title, text }: Props) {
     }
 
     synth.cancel();
-    const fullText = `${title}. ${text}`;
-    const utter = new SpeechSynthesisUtterance(fullText);
-    utter.rate = 1;
-    utter.pitch = 1;
-    utter.lang = "en-US";
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 0.95;
+    utter.pitch = 1.05;
+    utter.lang = "en-GB";
 
     const voices = synth.getVoices();
     const preferred =
-      voices.find((v) => /en[-_]US/i.test(v.lang) && /Google|Samantha|Natural/i.test(v.name)) ||
-      voices.find((v) => /en[-_]US/i.test(v.lang)) ||
+      // Premium / Natural UK voices first
+      voices.find((v) => /en[-_]GB/i.test(v.lang) && /Natural|Neural|Premium|Enhanced/i.test(v.name)) ||
+      // Named UK voices known to be high-quality
+      voices.find((v) => /Libby|Sonia|Ryan|Daniel|Kate|Serena|Stephanie|Oliver/i.test(v.name) && /en[-_]GB/i.test(v.lang)) ||
+      // Google UK voices
+      voices.find((v) => /en[-_]GB/i.test(v.lang) && /Google/i.test(v.name)) ||
+      // Any UK voice
+      voices.find((v) => /en[-_]GB/i.test(v.lang)) ||
+      // Fallback to any English
       voices.find((v) => /^en/i.test(v.lang));
     if (preferred) utter.voice = preferred;
 

@@ -186,6 +186,10 @@ export default async function PostPage({
               </ul>
             </div>
           )}
+          <div className="post-sidebar-block">
+            <span className="post-sidebar-label">Listen</span>
+            <ListenButton title={post.title} text={narrationText} />
+          </div>
         </aside>
 
         <div className="post-main">
@@ -194,8 +198,6 @@ export default async function PostPage({
             <h1>{post.title}</h1>
             {excerpt && <p className="post-dek">{excerpt}…</p>}
           </header>
-
-          <ListenButton title={post.title} text={narrationText} />
 
           {(heroImage || post.coverImage) && (
             <figure className="hero-image editorial-hero-image">
