@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import { CollaborateForm } from "./collaborate-form";
 
 export const metadata: Metadata = {
-  title: "Collaborate — Nav Web Online",
+  title: "Collaborate — Pitch a Project or Propose an Essay",
   description:
-    "Pitch a project, propose an essay, or just say hello. Direct line to Navjot.",
+    "Got a biomimicry research project, a bio-inspired product idea, or an essay to propose? Get in touch with Navjot directly — collaborations, commissions, and conversations welcome.",
+  alternates: { canonical: "/collaborate" },
+  openGraph: {
+    title: "Collaborate with Nav Web Online",
+    description:
+      "Pitch a project, propose an essay, or just say hello. A direct line to Navjot for biomimicry collaborations.",
+    url: "/collaborate",
+    type: "website",
+  },
 };
 
 export default function CollaboratePage() {

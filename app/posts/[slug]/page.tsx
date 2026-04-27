@@ -26,17 +26,22 @@ export async function generateMetadata({
   if (!post) return {};
 
   const postUrl = `${SITE_URL}/posts/${slug}`;
-  const excerpt = post.raw
+  const rawExcerpt = post.raw
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/^#.*$/gm, "")
     .replace(/[#*`>\[\]]/g, "")
-    .trim()
-    .split(/\n\s*\n/)[0]
-    ?.slice(0, 200);
+    .replace(/\s+/g, " ")
+    .trim();
+  // Trim to ~155 chars on a word boundary for clean SERP snippets
+  const excerpt =
+    rawExcerpt.length > 155
+      ? rawExcerpt.slice(0, 155).replace(/\s+\S*$/, "") + "\u2026"
+      : rawExcerpt;
 
   return {
     title: post.title,
     description: excerpt,
+    keywords: post.tags?.length ? [...post.tags, "biomimicry", "bio-inspired design"] : undefined,
     alternates: { canonical: postUrl },
     openGraph: {
       type: "article",

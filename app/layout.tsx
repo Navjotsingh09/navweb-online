@@ -8,31 +8,52 @@ import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
 const SITE_NAME = "Nav Web Online";
+const SITE_TAGLINE = "Biomimicry, Bio-Inspired Design & Innovation";
+const SITE_TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`;
 const SITE_DESC =
-  "How natural systems inspire the technology of tomorrow. Essays on biomimicry, bio-inspired engineering, and design lessons from evolution.";
+  "Essays on biomimicry and bio-inspired engineering — how nature's 3.8 billion years of R&D shapes the technology, products, and systems of tomorrow. Cited, audio-narrated, free.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Biomimicry & Innovation`,
+    default: SITE_TITLE,
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESC,
+  keywords: [
+    "biomimicry",
+    "bio-inspired design",
+    "bio-inspired engineering",
+    "nature inspired technology",
+    "innovation essays",
+    "product design",
+    "Navjot Singh",
+    "Nav Web Online",
+  ],
+  authors: [{ name: "Navjot Singh", url: SITE_URL }],
+  creator: "Navjot Singh",
+  publisher: SITE_NAME,
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Biomimicry & Innovation`,
+    title: SITE_TITLE,
     description: SITE_DESC,
     url: SITE_URL,
+    locale: "en_GB",
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Biomimicry & Innovation`,
+    title: SITE_TITLE,
     description: SITE_DESC,
     images: ["/og-default.png"],
   },
   alternates: { canonical: SITE_URL },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
 };
 
 export default function RootLayout({

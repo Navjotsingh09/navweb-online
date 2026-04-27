@@ -3,9 +3,17 @@ import type { Metadata } from "next";
 import { listPosts, type PostMeta } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Topics — Nav Web Online",
+  title: "Topics — Browse Biomimicry Essays by Subject",
   description:
-    "Browse essays by topic: organisms, mechanisms, materials, and the systems they inspire.",
+    "Explore biomimicry and bio-inspired design essays grouped by topic — organisms, mechanisms, materials, and the products they inspire. Discover what nature can teach engineers, designers, and founders.",
+  alternates: { canonical: "/topics" },
+  openGraph: {
+    title: "Topics — Browse Biomimicry Essays by Subject",
+    description:
+      "Explore biomimicry and bio-inspired design essays grouped by topic — organisms, mechanisms, materials, and the products they inspire.",
+    url: "/topics",
+    type: "website",
+  },
 };
 
 function slugifyTag(tag: string): string {
