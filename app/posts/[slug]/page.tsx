@@ -5,6 +5,7 @@ import { resolveUnsplashImages } from "@/lib/unsplash";
 import type { AgentImage } from "@/lib/unsplash";
 import Comments from "@/components/Comments";
 import ListenButton from "@/components/ListenButton";
+import AudioPlayer from "@/components/AudioPlayer";
 import { findRelatedPosts, getReadingTime } from "@/lib/post-utils";
 import fs from "node:fs";
 import path from "node:path";
@@ -188,7 +189,11 @@ export default async function PostPage({
           )}
           <div className="post-sidebar-block">
             <span className="post-sidebar-label">Listen</span>
-            <ListenButton title={post.title} text={narrationText} />
+            {fs.existsSync(path.join(process.cwd(), "public", "audio", `${slug}.mp3`)) ? (
+              <AudioPlayer src={`/audio/${slug}.mp3`} />
+            ) : (
+              <ListenButton title={post.title} text={narrationText} />
+            )}
           </div>
         </aside>
 
