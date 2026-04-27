@@ -3,6 +3,14 @@ title: "How the Kingfisher Silenced the Shinkansen: When Birds Solve Engineering
 slug: kingfisher-shinkansen-noise
 date: 2026-04-26
 tags: [biomimicry, transportation, acoustics, japan, engineering]
+truth: 80
+sources:
+  - label: "Wikipedia — Shinkansen (500 Series design)"
+    url: "https://en.wikipedia.org/wiki/500_Series_Shinkansen"
+    type: secondary
+  - label: "Eiji Nakatsu — Shinkansen Technology Learned from an Owl?"
+    url: "https://global.jr-central.co.jp/en/company/ir/annualreport/_pdf/annualreport2005-06.pdf"
+    type: primary
 ---
 
 # How the Kingfisher Silenced the Shinkansen: When Birds Solve Engineering Noise

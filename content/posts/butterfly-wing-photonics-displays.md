@@ -3,6 +3,14 @@ title: "Butterfly Wings and the Future of Pixel-Free Displays"
 slug: "butterfly-wing-photonics-displays"
 date: 2026-04-26
 tags: ["biomimicry", "materials-science", "photonics", "displays"]
+truth: 75
+sources:
+  - label: "Wikipedia — Structural Coloration"
+    url: "https://en.wikipedia.org/wiki/Structural_coloration"
+    type: secondary
+  - label: "Vukusic & Sambles — Photonic structures in biology (Nature)"
+    url: "https://www.nature.com/articles/nature01941"
+    type: primary
 ---
 
 # Butterfly Wings and the Future of Pixel-Free Displays

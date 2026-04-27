@@ -3,6 +3,14 @@ title: "The Seahorse's Prehensile Tail: Engineering Grippers That Never Slip"
 slug: "seahorse-tail-robotic-grippers"
 date: 2026-04-26
 tags: ["biomimicry", "robotics", "materials-science", "adaptive-systems"]
+truth: 80
+sources:
+  - label: "Wikipedia — Seahorse"
+    url: "https://en.wikipedia.org/wiki/Seahorse"
+    type: secondary
+  - label: "Porter et al. — Why the seahorse tail is square (Science, 2015)"
+    url: "https://www.science.org/doi/10.1126/science.aaa6683"
+    type: primary
 ---
 
 # The Seahorse's Prehensile Tail: Engineering Grippers That Never Slip

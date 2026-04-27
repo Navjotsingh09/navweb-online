@@ -3,6 +3,14 @@ title: "AI and India’s Tech Sector: From Headcount Growth to Intelligence-Led 
 slug: ai-impact-india-tech-sector
 date: 2026-04-26
 tags: [artificial-intelligence, india-tech, it-services, workforce, digital-transformation]
+truth: 70
+sources:
+  - label: "NASSCOM — Strategic Review (industry data)"
+    url: "https://nasscom.in/"
+    type: docs
+  - label: "McKinsey — The economic potential of generative AI"
+    url: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+    type: secondary
 ---
 
 # AI and India’s Tech Sector: From Headcount Growth to Intelligence-Led Value

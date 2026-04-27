@@ -3,6 +3,14 @@ title: "Mussel Adhesive: How Wet-Environment Glue Could Replace Sutures and Stap
 slug: mussel-adhesive-surgical-glue
 date: 2026-04-26
 tags: [biomimicry, medical-technology, adhesives, surgery, materials-science]
+truth: 80
+sources:
+  - label: "Wikipedia — Mussel adhesive proteins"
+    url: "https://en.wikipedia.org/wiki/Mussel"
+    type: secondary
+  - label: "Waite — Mussel adhesion essential footwork (J. Exp. Biol.)"
+    url: "https://journals.biologists.com/jeb/article/220/4/517/16894"
+    type: primary
 ---
 
 # Mussel Adhesive: How Wet-Environment Glue Could Replace Sutures and Staples

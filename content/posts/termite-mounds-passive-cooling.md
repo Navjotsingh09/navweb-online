@@ -3,6 +3,14 @@ title: "Termite Mounds as Architecture: How Insects Built the First Smart Buildi
 slug: termite-mounds-passive-cooling
 date: 2026-04-26
 tags: [biomimicry, architecture, sustainability, passive-design, construction]
+truth: 65
+sources:
+  - label: "Wikipedia — Eastgate Centre, Harare"
+    url: "https://en.wikipedia.org/wiki/Eastgate_Centre,_Harare"
+    type: secondary
+  - label: "Turner & Soar — Beyond biomimicry (re-examines the termite analogy)"
+    url: "https://royalsocietypublishing.org/doi/10.1098/rsif.2008.0140"
+    type: primary
 ---
 
 # Termite Mounds as Architecture: How Insects Built the First Smart Building

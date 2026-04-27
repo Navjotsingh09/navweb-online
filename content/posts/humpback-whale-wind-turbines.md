@@ -3,6 +3,14 @@ title: "Humpback Whale Fins: How Tubercles Rewrote Wind Energy"
 slug: humpback-whale-wind-turbines
 date: 2026-04-26
 tags: [biomimicry, renewable-energy, fluid-dynamics, marine-biology, engineering]
+truth: 75
+sources:
+  - label: "Wikipedia — Tubercle (Frank Fish research)"
+    url: "https://en.wikipedia.org/wiki/Tubercle"
+    type: secondary
+  - label: "Fish & Battle — Hydrodynamic design of humpback whale flipper (J. Morphol.)"
+    url: "https://onlinelibrary.wiley.com/doi/10.1002/jmor.1052250105"
+    type: primary
 ---
 
 # Humpback Whale Fins: How Tubercles Rewrote Wind Energy

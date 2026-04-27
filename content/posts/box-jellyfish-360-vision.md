@@ -3,6 +3,14 @@ title: "Box Jellyfish Eyes: 360° Vision Without a Brain Teaching Autonomous Veh
 slug: box-jellyfish-360-vision
 date: 2026-04-26
 tags: [biomimicry, autonomous-vehicles, vision-systems, robotics, sensors]
+truth: 75
+sources:
+  - label: "Wikipedia — Box Jellyfish (vision)"
+    url: "https://en.wikipedia.org/wiki/Box_jellyfish"
+    type: secondary
+  - label: "Nilsson et al. — Advanced optics in a jellyfish eye (Nature)"
+    url: "https://www.nature.com/articles/nature03484"
+    type: primary
 ---
 
 # Box Jellyfish Eyes: 360° Vision Without a Brain Teaching Autonomous Vehicle Sensors

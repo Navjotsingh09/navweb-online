@@ -3,6 +3,14 @@ title: "Spider Silk: Stronger Than Steel, Now Bulletproof and Biodegradable"
 slug: spider-silk-strength
 date: 2026-04-26
 tags: [biomimicry, materials-science, textiles, military, sustainability]
+truth: 75
+sources:
+  - label: "Wikipedia — Spider Silk"
+    url: "https://en.wikipedia.org/wiki/Spider_silk"
+    type: secondary
+  - label: "Vollrath & Knight — Liquid crystalline spinning of spider silk (Nature)"
+    url: "https://www.nature.com/articles/35069000"
+    type: primary
 ---
 
 # Spider Silk: Stronger Than Steel, Now Bulletproof and Biodegradable

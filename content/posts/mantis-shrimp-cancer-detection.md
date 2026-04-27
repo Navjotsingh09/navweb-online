@@ -3,6 +3,14 @@ title: "Mantis Shrimp Eyes: 16 Colors of Vision Unlocking Cancer Detection"
 slug: mantis-shrimp-cancer-detection
 date: 2026-04-26
 tags: [biomimicry, medical-technology, vision, cancer-detection, photonics]
+truth: 70
+sources:
+  - label: "Wikipedia — Mantis Shrimp (vision)"
+    url: "https://en.wikipedia.org/wiki/Mantis_shrimp"
+    type: secondary
+  - label: "Garcia et al. — Bio-inspired polarization imaging for cancer detection (PNAS)"
+    url: "https://www.pnas.org/doi/10.1073/pnas.1215616110"
+    type: primary
 ---
 
 # Mantis Shrimp Eyes: 16 Colors of Vision Unlocking Cancer Detection

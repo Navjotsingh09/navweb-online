@@ -3,6 +3,14 @@ title: "Lotus Leaf Superhydrophobicity: Self-Cleaning Coatings for Glass, Paint,
 slug: lotus-leaf-self-cleaning
 date: 2026-04-26
 tags: [biomimicry, materials-science, hydrophobicity, coatings, nanotechnology]
+truth: 90
+sources:
+  - label: "Wikipedia — Lotus Effect"
+    url: "https://en.wikipedia.org/wiki/Lotus_effect"
+    type: secondary
+  - label: "Barthlott & Neinhuis — Purity of the sacred lotus (Planta, 1997)"
+    url: "https://link.springer.com/article/10.1007/s004250050096"
+    type: primary
 ---
 
 # Lotus Leaf Superhydrophobicity: Self-Cleaning Coatings for Glass, Paint, and Textiles

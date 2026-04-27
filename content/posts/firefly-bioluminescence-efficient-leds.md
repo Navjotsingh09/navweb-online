@@ -3,6 +3,14 @@ title: "Firefly Bioluminescence: Engineering 100% Efficient Light"
 slug: "firefly-bioluminescence-efficient-leds"
 date: 2026-04-26
 tags: ["biomimicry", "photonics", "optics", "sustainable-energy"]
+truth: 65
+sources:
+  - label: "Wikipedia — Bioluminescence"
+    url: "https://en.wikipedia.org/wiki/Bioluminescence"
+    type: secondary
+  - label: "Bay et al. — Optimal overlayer inspired by firefly lanterns (PNAS)"
+    url: "https://www.pnas.org/doi/10.1073/pnas.1213331110"
+    type: primary
 ---
 
 # Firefly Bioluminescence: Engineering 100% Efficient Light

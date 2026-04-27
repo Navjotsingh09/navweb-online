@@ -3,6 +3,14 @@ title: "Gecko Feet and the Quest for Glue-Free Adhesion: From Desert Walls to Op
 slug: gecko-feet-dry-adhesion
 date: 2026-04-26
 tags: [biomimicry, nanotechnology, adhesives, robotics, medicine]
+truth: 80
+sources:
+  - label: "Wikipedia — Synthetic Setae"
+    url: "https://en.wikipedia.org/wiki/Synthetic_setae"
+    type: secondary
+  - label: "Autumn et al. — Adhesive force of a single gecko foot-hair (Nature)"
+    url: "https://www.nature.com/articles/35015073"
+    type: primary
 ---
 
 # Gecko Feet and the Quest for Glue-Free Adhesion: From Desert Walls to Operating Rooms

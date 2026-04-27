@@ -3,6 +3,14 @@ title: "Ant Colony Optimization: How Tesla and Uber Route Traffic the Way Ants L
 slug: ant-colony-optimization-tesla-uber
 date: 2026-04-26
 tags: [biomimicry, algorithms, autonomous-systems, optimization, swarm-intelligence]
+truth: 80
+sources:
+  - label: "Wikipedia — Ant Colony Optimization Algorithms"
+    url: "https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms"
+    type: secondary
+  - label: "Dorigo & Stützle — Ant Colony Optimization (MIT Press)"
+    url: "https://mitpress.mit.edu/9780262042192/ant-colony-optimization/"
+    type: primary
 ---
 
 # Ant Colony Optimization: How Tesla and Uber Route Traffic the Way Ants Lay Trails

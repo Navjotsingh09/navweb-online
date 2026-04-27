@@ -3,6 +3,14 @@ title: "Shark Skin Under the Microscope: From Olympic Pools to Aircraft Wings"
 slug: shark-skin-drag-reduction
 date: 2026-04-26
 tags: [biomimicry, hydrodynamics, sports, aviation, biomaterials]
+truth: 80
+sources:
+  - label: "Wikipedia — Sharkskin"
+    url: "https://en.wikipedia.org/wiki/Sharkskin"
+    type: secondary
+  - label: "Oeffner & Lauder — Hydrodynamic function of shark skin (J. Exp. Biol.)"
+    url: "https://journals.biologists.com/jeb/article/215/5/785/11264"
+    type: primary
 ---
 
 # Shark Skin Under the Microscope: From Olympic Pools to Aircraft Wings
