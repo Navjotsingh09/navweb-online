@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import { MobileMenu } from "./mobile-menu";
+import { FooterNewsletter } from "./footer-newsletter";
+import { listPosts } from "@/lib/posts";
 import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.navweb.online";
@@ -39,6 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const year = new Date().getFullYear();
+  const posts = listPosts();
+  const essayCount = posts.length;
+  const topics = Array.from(new Set(posts.flatMap((p) => p.tags))).filter(Boolean);
 
   return (
     <html lang="en">
@@ -84,37 +89,52 @@ export default function RootLayout({
         </header>
         <Analytics />
         <main className="site-main">{children}</main>
-        <footer className="site-footer">
+        <footer className="site-footer" aria-labelledby="footer-heading">
+          <h2 id="footer-heading" className="visually-hidden">
+            Site footer
+          </h2>
           <div className="site-shell site-footer-grid">
-            <div className="footer-col">
-              <p className="footer-heading">Nav Web Online</p>
-              <p>Biomimicry editorial archive for builders, researchers, and designers.</p>
+            <div className="footer-col footer-col-brand">
+              <Link href="/" className="footer-brand" aria-label="Nav Web Online — home">
+                <span className="footer-brand-mark">NW</span>
+                <span className="footer-brand-name">Nav Web Online</span>
+              </Link>
+              <p className="footer-tagline">
+                A biomimicry editorial archive for builders, researchers, and
+                designers — essays on what evolution already solved.
+              </p>
+              <div className="footer-meta">
+                <span className="footer-meta-pill">
+                  <span className="footer-meta-dot" aria-hidden="true" />
+                  {essayCount} essay{essayCount === 1 ? "" : "s"} live
+                </span>
+                <span className="footer-meta-pill">
+                  {topics.length} topic{topics.length === 1 ? "" : "s"}
+                </span>
+              </div>
             </div>
 
-            <div className="footer-col">
+            <nav className="footer-col" aria-label="Footer navigation">
               <p className="footer-heading">Navigate</p>
               <Link href="/">Home</Link>
-              <Link href="/posts">Archive</Link>
+              <Link href="/posts">Essay archive</Link>
+              <Link href="/topics">Topics</Link>
+              <Link href="/collaborate">Collaborate</Link>
               <Link href="/#about">About</Link>
-            </div>
+            </nav>
 
             <div className="footer-col">
-              <p className="footer-heading">Highlights</p>
-              <p>14 essays in archive</p>
-              <p>Long-form case studies</p>
+              <p className="footer-heading">Resources</p>
+              <a href="/sitemap.xml">Sitemap</a>
+              <a href="/robots.txt">Robots</a>
+              <a href="mailto:hello@navweb.online">hello@navweb.online</a>
             </div>
 
-            <form className="footer-col footer-newsletter" action="#" method="post">
-              <label htmlFor="footer-email" className="footer-heading">Newsletter</label>
-              <div className="footer-newsletter-row">
-                <input id="footer-email" type="email" placeholder="you@example.com" />
-                <button type="submit">Subscribe</button>
-              </div>
-            </form>
+            <FooterNewsletter topics={topics} />
           </div>
 
           <div className="site-shell footer-legal">
-            <p>© {year} Nav Web Online</p>
+            <p>© {year} Nav Web Online. All essays released for human reading.</p>
             <p>Built for readers who ship better systems by studying nature.</p>
           </div>
         </footer>

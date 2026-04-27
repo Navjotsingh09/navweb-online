@@ -18,5 +18,11 @@ service cloud.firestore {
       // Only server-side (Admin SDK, bypasses rules) can update/delete
       allow update, delete: if false;
     }
+
+    match /subscribers/{subscriberId} {
+      // Subscribers list is private. All writes go through the
+      // /api/subscribe route using the Admin SDK (bypasses these rules).
+      allow read, write: if false;
+    }
   }
 }
