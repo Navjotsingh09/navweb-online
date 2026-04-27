@@ -101,7 +101,7 @@ export function MobileMenu() {
           </Link>
 
           <div className="mobile-menu-foot">
-            <a href="mailto:navjotsinghhundal41@gmail.com">navjotsinghhundal41@gmail.com</a>
+            <a href="mailto:navjot.singh@5rv.digital">navjot.singh@5rv.digital</a>
             <a href="tel:+447587830397">+44 7587 830 397</a>
           </div>
         </div>

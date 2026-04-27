@@ -31,9 +31,9 @@ export default function CollaboratePage() {
 
         <ul className="collab-channels">
           <li>
-            <a href="mailto:navjotsinghhundal41@gmail.com" className="collab-channel">
+            <a href="mailto:navjot.singh@5rv.digital" className="collab-channel">
               <span className="collab-channel-label">Email</span>
-              <span className="collab-channel-value">navjotsinghhundal41@gmail.com</span>
+              <span className="collab-channel-value">navjot.singh@5rv.digital</span>
             </a>
           </li>
           <li>

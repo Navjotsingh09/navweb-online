@@ -288,7 +288,7 @@ export function CollaborateForm() {
           {status === "error" && (
             <p className="collab-error" role="alert">
               {errorMsg}{" "}
-              <a href="mailto:navjotsinghhundal41@gmail.com">Email directly →</a>
+              <a href="mailto:navjot.singh@5rv.digital">Email directly →</a>
             </p>
           )}
 
