@@ -1,0 +1,52 @@
+name: Daily Blog Post
+
+on:
+  schedule:
+    # 08:00 UTC every day
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Override topic (leave blank for auto-discovery)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TOPIC_OVERRIDE: ${{ inputs.topic }}
+        run: |
+          if [ -n "$TOPIC_OVERRIDE" ]; then
+            TOPIC_OVERRIDE="$TOPIC_OVERRIDE" node scripts/generate-post.mjs
+          else
+            node scripts/generate-post.mjs
+          fi
+
+      - name: Commit and push new post
+        run: |
+          git config user.name "Biomimicry Blogger Bot"
+          git config user.email "bot@navweb.online"
+          git add content/posts/
+          if git diff --staged --quiet; then
+            echo "No new post to commit (duplicate slug or generation skipped)."
+          else
+            git commit -m "feat(blog): daily post $(date +%Y-%m-%d) [skip ci]"
+            git push
+          fi
